@@ -33,12 +33,12 @@
         <div class="row" id="configuratorRow">
           <!-- 六個技能格子 -->
           <!-- 每個技能格子都有一個唯一的ID，例如skillSlot1, skillSlot2, 等等 -->
-          <div class="col-2 mb-3"><div class="card" id="skillSlot1"></div></div>
-          <div class="col-2 mb-3"><div class="card" id="skillSlot2"></div></div>
-          <div class="col-2 mb-3"><div class="card" id="skillSlot3"></div></div>
-          <div class="col-2 mb-3"><div class="card" id="skillSlot4"></div></div>
-          <div class="col-2 mb-3"><div class="card" id="skillSlot5"></div></div>
-          <div class="col-2 mb-3"><div class="card" id="skillSlot6"></div></div>
+          <div class="col-4 mb-3"><div class="card" id="skillSlot1"></div></div>
+          <div class="col-4 mb-3"><div class="card" id="skillSlot2"></div></div>
+          <div class="col-4 mb-3"><div class="card" id="skillSlot3"></div></div>
+          <div class="col-4 mb-3"><div class="card" id="skillSlot4"></div></div>
+          <div class="col-4 mb-3"><div class="card" id="skillSlot5"></div></div>
+          <div class="col-4 mb-3"><div class="card" id="skillSlot6"></div></div>
         </div>
       </div>
     </div>
@@ -46,7 +46,7 @@
     <!-- 技能清單區域 -->
     <div class="row" id="skillList">
         <!-- 技能1 -->
-        <div class="col-3 mb-3"><a href="#" class="list-group-item list-group-item-action" data-skill="技能1"><img src="path/to/skill1.jpg" alt="技能1" class="img-fluid"></a></div>
+        <div class="col-3 mb-3"><a href="#" class="list-group-item list-group-item-action" data-skill="技能1"><img src="path/to/skill1.jpg" alt="技能1" class="img-fluid" width="300%" height="300%"></a></div>
   
         <!-- 技能2 -->
         <div class="col-3 mb-3"><a href="#" class="list-group-item list-group-item-action" data-skill="技能2"><img src="path/to/skill2.jpg" alt="技能2" class="img-fluid"></a></div>
@@ -54,7 +54,6 @@
         <!-- 技能3 -->
         <div class="col-3 mb-3"><a href="#" class="list-group-item list-group-item-action" data-skill="技能3"><img src="path/to/skill3.jpg" alt="技能3" class="img-fluid"></a></div>
   
-        <!-- 添加更多技能 -->
         <!-- 技能4 -->
         <div class="col-3 mb-3"><a href="#" class="list-group-item list-group-item-action" data-skill="技能4"><img src="path/to/skill4.jpg" alt="技能4" class="img-fluid"></a></div>
   
@@ -64,7 +63,6 @@
         <!-- 技能6 -->
         <div class="col-3 mb-3"><a href="#" class="list-group-item list-group-item-action" data-skill="技能6"><img src="path/to/skill6.jpg" alt="技能6" class="img-fluid"></a></div>
   
-        <!-- 添加更多技能 -->
         <!-- 技能7 -->
         <div class="col-3 mb-3"><a href="#" class="list-group-item list-group-item-action" data-skill="技能7"><img src="path/to/skill7.jpg" alt="技能7" class="img-fluid"></a></div>
   
@@ -162,12 +160,12 @@
           
           // 如果有空格，將技能和圖片添加到該位置
           if (emptySlot.length > 0) {
-            emptySlot.html('<div class="card-body">' + '<img src="' + imgPath + '" alt="' + skill + '" class="img-fluid"><button type="button" class="close" aria-label="Close" onclick="removeSkill(this)">刪除</button></div>');
+            emptySlot.html('<div class="card-body">' + '<img src="' + imgPath + '" alt="' + skill + '" class="img-fluid" width="150%"><button type="button" class="close" aria-label="Close" onclick="removeSkill(this)">X</button></div>');
           } else {
             // 如果沒有空格，則添加到最後一個位置
             var slotNumber = $('#configuratorRow .card').length + 1;
             var slotID = 'skillSlot' + slotNumber;
-            $('#configuratorRow').append('<div class="col-2 mb-3"><div class="card" id="' + slotID + '"><div class="card-body">' + '<img src="' + imgPath + '" alt="' + skill + '" class="img-fluid"><button type="button" class="close" aria-label="Close" onclick="removeSkill(this)">刪除</button></div></div></div>');
+            $('#configuratorRow').append('<div class="col-2 mb-3"><div class="card" id="' + slotID + '"><div class="card-body">' + '<img src="' + imgPath + '" alt="' + skill + '" class="img-fluid" width="150%"><button type="button" class="close" aria-label="Close" onclick="removeSkill(this)">X</button></div></div></div>');
           }
         } else {
           alert('你已經選擇了六個技能！');
