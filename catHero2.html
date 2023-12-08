@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <title>黑金喵農場</title>
-  <!-- 在<head>區域中引入jQuery -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 </head>
 <body>
@@ -201,8 +200,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<!-- 在你的HTML文件底部添加以下JavaScript代碼 -->
-<script>
+<script>//技能配置JS
 $(document).ready(function () {
     var skillsData = {
     skill0: {
@@ -615,7 +613,6 @@ $(document).ready(function () {
       var skillId = $(this).attr('id').replace('skillList', '');
       var selectedSkillName=document.getElementById("selectedSkillName");
       var selectedSkillDescription=document.getElementById("selectedSkillDescription");
-
       skillId = parseInt(skillId);
       var selectedSkill = skillsData['skill' + skillId];
 
@@ -663,8 +660,6 @@ $(document).ready(function () {
         var skillDescription = selectedSkill.description.replace(selectSkillLevel1,selectSkillLevel);
       }
       
-      console.log(selectSkillLevel)
-      
       // 更新技能詳細說明
       modal.find('#selectedSkillDescription').text(skillDescription);
 
@@ -689,9 +684,52 @@ $(document).ready(function () {
   $('.skill-box').click(function () {
     selectedSkillBoxId = $(this).attr('id');
     // 在這裡你可以進行一些其他的處理，比如顯示選中技能的詳細信息等
-    console.log('選中的技能格子 ID：', selectedSkillBoxId);
   });
 });
 </script>
+
+<div class="container mt-4">
+  <h2>夥伴配置(撰寫中)&nbsp;&nbsp;魔力<span id="mpValue">0</span>/30</h2>
+  <div class="row">
+    <!-- 技能格子，lg以上顯示col-lg-2，其餘顯示col-4 -->
+    <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill1">
+        <img src="path/to/skill0.jpg" alt="技能圖片" class="img-fluid">
+        <p id="skillLevel1">等級：1</p>
+    </div>
+    <!-- 其他技能格子... -->
+    <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill2">
+        <img src="path/to/skill0.jpg" alt="技能圖片" class="img-fluid">
+        <p id="skillLevel1">等級：1</p>
+    </div>
+    <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill3">
+        <img src="path/to/skill0.jpg" alt="技能圖片" class="img-fluid">
+        <p id="skillLevel1">等級：1</p>
+    </div>
+    <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill4">
+        <img src="path/to/skill0.jpg" alt="技能圖片" class="img-fluid">
+        <p id="skillLevel1">等級：1</p>
+    </div>
+    <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill5">
+        <img src="path/to/skill0.jpg" alt="技能圖片" class="img-fluid">
+        <p id="skillLevel1">等級：1</p>
+    </div>
+    <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill6">
+        <img src="path/to/skill0.jpg" alt="技能圖片" class="img-fluid">
+        <p id="skillLevel1">等級：1</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // 使用JavaScript来更新数字
+  let mpValuerElement = document.getElementById('mpValue');
+
+  // 假设你有一个变量来存储可变的数字
+  let mpValue = 0;
+
+  // 更新 span 元素的内容
+  mpValuerElement.textContent = mpValue;
+</script>
+
 </body>
 </html>
