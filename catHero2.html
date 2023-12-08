@@ -213,7 +213,7 @@ $(document).ready(function () {
       name: "晚餐時間",
       description: "一次發射8個造成攻擊力42%的追蹤飛彈。",
       level1: "42",
-      level2: "",
+      level2: "50",
       level3: "",
       level4: "67",
       level5: "75",
@@ -223,12 +223,11 @@ $(document).ready(function () {
       level9: "",
       level10: ""
     },
-    // 其他技能...
     skill2: {
       name: "砲彈鼠",
       description: "召喚即將爆炸的鼠型機器人並造成攻擊力85%的範圍傷害。",
       level1: "85",
-      level2: "",
+      level2: "102",
       level3: "",
       level4: "136",
       level5: "153",
@@ -242,7 +241,7 @@ $(document).ready(function () {
       name: "超級喵喵",
       description: "超級喵星人將爆衝飛下並造成攻擊力178%的傷害。",
       level1: "178",
-      level2: "",
+      level2: "214",
       level3: "",
       level4: "285",
       level5: "320",
@@ -256,7 +255,7 @@ $(document).ready(function () {
       name: "馬戲團法圈",
       description: "在4秒內可每秒投出2次球球來造成攻擊力53%的傷害。",
       level1: "53",
-      level2: "",
+      level2: "64",
       level3: "",
       level4: "85",
       level5: "96",
@@ -326,8 +325,8 @@ $(document).ready(function () {
       name: "氣噗噗！",
       description: "在5秒內攻擊速度增加40%。可疊加［氣噗噗！］的效果。",
       level1: "40",
-      level2: "41",
-      level3: "42",
+      level2: "",
+      level3: "",
       level4: "43",
       level5: "44",
       level6: "",
@@ -366,11 +365,11 @@ $(document).ready(function () {
     },
     skill12: {
       name: "稻草貓",
-      description:"召喚維持3秒的稻草貓來每秒造成7%的範圍傷害且施加［恐怖效果］並在2秒內增加7%的傷害。",
-      level1: "7",
+      description:"召喚維持3秒的稻草貓來每秒造成{areaDamagePercent}%的範圍傷害且施加［恐怖效果］並在2秒內增加{damagePercent}%的傷害。",
+      level1: ["7","7"],
       level2: "",
-      level3: "9",
-      level4: "",
+      level3: ["9","9"],
+      level4: ["11","58"],
       level5: "",
       level6: "",
       level7: "",
@@ -396,7 +395,7 @@ $(document).ready(function () {
       name: "魔法盾牌",
       description: "在13秒內所受傷害減少30%。",
       level1: "30",
-      level2: "31",
+      level2: "",
       level3: "32",
       level4: "33",
       level5: "",
@@ -407,7 +406,7 @@ $(document).ready(function () {
       level10: ""
     },
     skill15: {
-      name: "飛機",
+      name: "飛雞",
       description: "召喚即將爆炸的3台機械飛雞來造成攻擊力79%的範圍傷害。",
       level1: "79",
       level2: "",
@@ -653,8 +652,18 @@ $(document).ready(function () {
       var selectSkillLevel1 = selectedSkill['level1'];
       var selectSkillLevel = selectedSkill['level'+selectedLevel];
       currentSkillLevel.text('等級：' + selectedLevel);
+
+      if(Array.isArray(selectSkillLevel) && selectSkillLevel.length > 0){
+        var areaDamagePercentValue = selectedSkill['level' + selectedLevel] || []; // 如果對應等級的值不存在，則使用空陣列
+        var i=0;
+        var skillDescription = selectedSkill.description
+          .replace(/\{areaDamagePercent\}/g, areaDamagePercentValue[i++])
+          .replace(/\{damagePercent\}/g, areaDamagePercentValue[i]);
+      }else{
+        var skillDescription = selectedSkill.description.replace(selectSkillLevel1,selectSkillLevel);
+      }
       
-      var skillDescription = selectedSkill.description.replace(selectSkillLevel1,selectSkillLevel);
+      console.log(selectSkillLevel)
       
       // 更新技能詳細說明
       modal.find('#selectedSkillDescription').text(skillDescription);
