@@ -61,7 +61,7 @@
 
 <!-- 技能清單的彈出視窗 -->
 <div class="modal fade" id="skillListModal" tabindex="-1" role="dialog" aria-labelledby="skillListModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="skillListModalLabel">技能清單</h5>
@@ -211,116 +211,396 @@ $(document).ready(function () {
     },
     skill1: {
       name: "晚餐時間",
-      description: "一次發射8個造成攻擊力67%的追蹤飛彈。"
+      description: "一次發射8個造成攻擊力42%的追蹤飛彈。",
+      level1: "42",
+      level2: "",
+      level3: "",
+      level4: "67",
+      level5: "75",
+      level6: "83",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     // 其他技能...
     skill2: {
       name: "砲彈鼠",
-      description: "召喚即將爆炸的鼠型機器人並造成攻擊力136%的範圍傷害。"
+      description: "召喚即將爆炸的鼠型機器人並造成攻擊力85%的範圍傷害。",
+      level1: "85",
+      level2: "",
+      level3: "",
+      level4: "136",
+      level5: "153",
+      level6: "170",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill3: {
       name: "超級喵喵",
-      description: "超級喵星人將爆衝飛下並造成攻擊力285%的傷害。"
+      description: "超級喵星人將爆衝飛下並造成攻擊力178%的傷害。",
+      level1: "178",
+      level2: "",
+      level3: "",
+      level4: "285",
+      level5: "320",
+      level6: "356",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill4: {
       name: "馬戲團法圈",
-      description: "在4秒內可每秒投出2次球球來造成攻擊力85%的傷害。"
+      description: "在4秒內可每秒投出2次球球來造成攻擊力53%的傷害。",
+      level1: "53",
+      level2: "",
+      level3: "",
+      level4: "85",
+      level5: "96",
+      level6: "107",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill5: {
       name: "甜點流星",
-      description: "墮落5個餅乾流星並對擊中的敵人造成攻擊力63%傷害。"
+      description: "墮落5個餅乾流星並對擊中的敵人造成攻擊力45%傷害。",
+      level1: "45",
+      level2: "",
+      level3: "63",
+      level4: "72",
+      level5: "81",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill6: {
       name: "葉子飛鏢",
-      description: "對直線範圍上的敵人造成攻擊力20%的傷害。"
+      description: "對直線範圍上的敵人造成攻擊力14%的傷害。",
+      level1: "14",
+      level2: "",
+      level3: "20",
+      level4: "22",
+      level5: "25",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill7: {
       name: "冰霜碎片",
-      description: "召喚一邊旋轉一邊發射碎片的雪花。雪花碎片的可造成攻擊力29%的傷害。"
+      description: "召喚一邊旋轉一邊發射碎片的雪花。雪花碎片的可造成攻擊力18%的傷害。",
+      level1: "18",
+      level2: "",
+      level3: "25",
+      level4: "29",
+      level5: "32",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill8: {
       name: "咻咻咻咻",
-      description: "以尖利的爪子造成12次攻擊力45%的傷害。"
+      description: "以尖利的爪子造成12次攻擊力23%的傷害。",
+      level1: "23",
+      level2: "",
+      level3: "45",
+      level4: "51",
+      level5: "58",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill9: {
       name: "氣噗噗！",
-      description: "在5秒內攻擊速度增加42%。可疊加［氣噗噗！］的效果。"
+      description: "在5秒內攻擊速度增加40%。可疊加［氣噗噗！］的效果。",
+      level1: "40",
+      level2: "41",
+      level3: "42",
+      level4: "43",
+      level5: "44",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill10: {
       name: "超強力火箭",
-      description: "發射超強力火箭並造成攻擊力150%的範圍傷害。"
+      description: "發射超強力火箭並造成攻擊力107%的範圍傷害。",
+      level1: "107",
+      level2: "",
+      level3: "150",
+      level4: "171",
+      level5: "192",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill11: {
       name: "鮮魚散彈",
-      description: "發射12個留碳纖餘並造成攻擊力84%的傷害。"
+      description: "發射12個留碳纖餘並造成攻擊力60%的傷害。",
+      level1: "60",
+      level2: "",
+      level3: "84",
+      level4: "96",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill12: {
       name: "稻草貓",
-      description:"召喚維持3秒的稻草貓來每秒造成9%的範圍傷害且施加［恐怖效果］並在2秒內增加9%的傷害。"
+      description:"召喚維持3秒的稻草貓來每秒造成7%的範圍傷害且施加［恐怖效果］並在2秒內增加7%的傷害。",
+      level1: "7",
+      level2: "",
+      level3: "9",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill13: {
       name: "漩渦",
-      description: "召喚維持5秒的漩渦，並對範圍內的敵人在每秒造成4次攻擊力18%的傷害。"
+      description: "召喚維持5秒的漩渦，並對範圍內的敵人在每秒造成4次攻擊力13%的傷害。",
+      level1: "13",
+      level2: "15",
+      level3: "18",
+      level4: "20",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill14: {
       name: "魔法盾牌",
-      description: "在13秒內所受傷害減少32%。"
+      description: "在13秒內所受傷害減少30%。",
+      level1: "30",
+      level2: "31",
+      level3: "32",
+      level4: "33",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill15: {
-      name: "",
-      description: "。"
+      name: "飛機",
+      description: "召喚即將爆炸的3台機械飛雞來造成攻擊力79%的範圍傷害。",
+      level1: "79",
+      level2: "",
+      level3: "111",
+      level4: "126",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill16: {
-      name: "",
-      description: "。"
+      name: "魔法壓縮",
+      description: "將敵人拖曳至一處並造成攻擊力45%的範圍傷害。",
+      level1: "45",
+      level2: "",
+      level3: "63",
+      level4: "72",
+      level5: "81",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill17: {
-      name: "",
-      description: "。"
+      name: "墨水噴發",
+      description: "召喚海盜章魚對範圍內的敵人噴射墨水來造成1000%的範圍傷害，並施加[失明效果]且在8秒內減少敵方40%的攻擊力。",
+      level1: "1000",
+      level2: "1200",
+      level3: "1400",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill18: {
-      name: "",
-      description: "。"
+      name: "漢堡派對",
+      description: "於4秒內可每秒投擲2次和寶材料來造成攻擊力350%的傷害。",
+      level1: "350",
+      level2: "420",
+      level3: "490",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill19: {
-      name: "",
-      description: "。"
+      name: "魔法弓箭",
+      description: "召喚維持5秒的魔法弓箭，並在每秒發射5次貫通箭矢來造成攻擊力240%的傷害。",
+      level1: "240",
+      level2: "",
+      level3: "336",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill20: {
-      name: "",
-      description: "。"
+      name: "滿月",
+      description: "召喚維持5秒的巨型喵勇士且額外投擲6個基本攻擊先於並造成攻擊力80%的傷害。",
+      level1: "80",
+      level2: "96",
+      level3: "112",
+      level4: "128",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill21: {
-      name: "",
-      description: "。"
+      name: "喵隕石",
+      description: "墜落15個喵喵隕石來對被集中的敵人造成攻擊力600%的傷害。",
+      level1: "600",
+      level2: "720",
+      level3: "840",
+      level4: "960",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill22: {
-      name: "",
-      description: "。"
+      name: "喵喵光束",
+      description: "召喚維持10秒的光束機器喵，在射程範圍內的敵人將每秒受到3次攻擊力400%的傷害。",
+      level1: "400",
+      level2: "480",
+      level3: "560",
+      level4: "640",
+      level5: "720",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill23: {
-      name: "",
-      description: "。"
+      name: "海盜標識",
+      description: "召喚海盜貓咪來對所有敵人標記海盜標誌。被標記的敵人在受到[貓咪]或[海盜]類的技能攻擊時，標誌將爆炸並額外施加300%的傷害。",
+      level1: "300",
+      level2: "360",
+      level3: "420",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill24: {
-      name: "",
-      description: "。"
+      name: "夜曲召喚",
+      description: "召喚夜曲來造成攻擊力3000%的範圍傷害，並施加[恐怖效果]且在5秒內增加50%的所受傷害。",
+      level1: "3000",
+      level2: "3600",
+      level3: "",
+      level4: "4800",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill25: {
-      name: "",
-      description: "。"
+      name: "黑洞",
+      description: "召喚維持5秒會把敵人吸引至一處的黑洞並對陷入黑洞內的敵人造成每秒2次攻擊力300%的傷害。",
+      level1: "300",
+      level2: "360",
+      level3: "",
+      level4: "480",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill26: {
-      name: "",
-      description: "。"
+      name: "鯨魚艦",
+      description: "召喚進擊的巨大鯨魚飛鑑來對範圍內的敵人造成每秒3次攻擊力1200%的傷害。",
+      level1: "1200",
+      level2: "1440",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill27: {
-      name: "",
-      description: "。"
+      name: "貓貓軍團",
+      description: "施放時10秒開啟天空之門，配戴貓類技能時，將會額外使出強化技能，強化技能為基礎技能昌害值增加20000%的額外傷害。",
+      level1: "20000",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
     skill28: {
-      name: "",
-      description: "。"
+      name: "深海復仇",
+      description: "向所有敵人留下咬痕，並在咬痕內保存傷害量。2秒後召喚深海的巨大鯊魚，造成攻擊力的30000%傷害後，再造成儲存傷害量的15000%之傷害。",
+      level1: "15000",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
     },
   };
   var selectedSkillImg = ''; // 用來保存選中的技能圖片
@@ -333,28 +613,26 @@ $(document).ready(function () {
 
     // 技能清單中的每個格子，包括圖片等信息
     modal.find('.skill-list-box').click(function () {
-  var skillId = $(this).attr('id').replace('skillList', '');
-  var selectedSkillName=document.getElementById("selectedSkillName");
-  var selectedSkillDescription=document.getElementById("selectedSkillDescription");
+      var skillId = $(this).attr('id').replace('skillList', '');
+      var selectedSkillName=document.getElementById("selectedSkillName");
+      var selectedSkillDescription=document.getElementById("selectedSkillDescription");
 
-  skillId = parseInt(skillId);
+      skillId = parseInt(skillId);
+      var selectedSkill = skillsData['skill' + skillId];
 
-  var selectedSkill = skillsData['skill' + skillId];
-
-  selectedSkillImg = $(this).find('img').attr('src');
-  selectedSkillName.innerText=selectedSkill.name;
-  selectedSkillDescription.innerText=selectedSkill.description;
-
-  console.log('選中的技能圖片：', selectedSkillImg);
-});
-
+      selectedSkillImg = $(this).find('img').attr('src');
+      selectedSkillName.innerText=selectedSkill.name;
+      selectedSkillDescription.innerText=selectedSkill.description;
+    });
 });
 
   // 技能詳細信息模態框
   $('#skillDetailModal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget);
-    var skillId = button.attr('id'); // 獲取技能的 ID
+    var skillId = button.attr('id').replace('skillList', ''); // 獲取技能的 ID
     var modal = $(this);
+    
+    var selectedSkill = skillsData['skill' + skillId];
 
     // 在模態框標題中顯示技能名稱
     modal.find('.modal-title').text('技能詳細信息');
@@ -372,9 +650,17 @@ $(document).ready(function () {
 
     skillLevelInput.change(function () {
       var selectedLevel = skillLevelInput.val();
+      var selectSkillLevel1 = selectedSkill['level1'];
+      var selectSkillLevel = selectedSkill['level'+selectedLevel];
       currentSkillLevel.text('等級：' + selectedLevel);
-      // 在這裡可以進行相應的處理，比如顯示不同等級的技能效果
+      
+      var skillDescription = selectedSkill.description.replace(selectSkillLevel1,selectSkillLevel);
+      
+      // 更新技能詳細說明
+      modal.find('#selectedSkillDescription').text(skillDescription);
+
       console.log('選擇的等級：' + selectedLevel);
+      // 在這裡可以進行相應的處理，比如顯示不同等級的技能效果
     });
 
     // 新增按鈕的點擊事件
@@ -397,10 +683,6 @@ $(document).ready(function () {
     console.log('選中的技能格子 ID：', selectedSkillBoxId);
   });
 });
-
-
 </script>
-
 </body>
 </html>
-
