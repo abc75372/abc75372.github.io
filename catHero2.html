@@ -3,56 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <title>黑金喵農場</title>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 </head>
 <body>
 
+<!--頂端清單-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">黑金喵農場</a>
+  <a class="navbar-brand fs-1" href="index.html" id="top">黑金喵農場</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
+  <div class="collapse navbar-collapse fs-4" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">配置器</a>
+      <li class="nav-item">
+        <a class="nav-link" href="Untitled-1.html">配置器</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">各項資訊</a>
+        <a class="nav-link" href="Untitled-2.html">各項資訊</a>
       </li>
     </ul>
   </div>
 </nav>
 
+<!--技能配置-->
 <div class="container mt-4">
   <h2>技能配置</h2>
   <div class="row">
     <!-- 技能格子，lg以上顯示col-lg-2，其餘顯示col-4 -->
     <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill1">
-        <img src="path/to/skill0.jpg" alt="技能圖片" class="img-fluid">
+        <img src="path/to/skill0.jpg" alt="夥伴圖片" class="img-fluid">
         <p id="skillLevel1">等級：1</p>
     </div>
     <!-- 其他技能格子... -->
     <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill2">
-        <img src="path/to/skill0.jpg" alt="技能圖片" class="img-fluid">
+        <img src="path/to/skill0.jpg" alt="夥伴圖片" class="img-fluid">
         <p id="skillLevel1">等級：1</p>
     </div>
     <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill3">
-        <img src="path/to/skill0.jpg" alt="技能圖片" class="img-fluid">
+        <img src="path/to/skill0.jpg" alt="夥伴圖片" class="img-fluid">
         <p id="skillLevel1">等級：1</p>
     </div>
     <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill4">
-        <img src="path/to/skill0.jpg" alt="技能圖片" class="img-fluid">
+        <img src="path/to/skill0.jpg" alt="夥伴圖片" class="img-fluid">
         <p id="skillLevel1">等級：1</p>
     </div>
     <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill5">
-        <img src="path/to/skill0.jpg" alt="技能圖片" class="img-fluid">
+        <img src="path/to/skill0.jpg" alt="夥伴圖片" class="img-fluid">
         <p id="skillLevel1">等級：1</p>
     </div>
     <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill6">
-        <img src="path/to/skill0.jpg" alt="技能圖片" class="img-fluid">
+        <img src="path/to/skill0.jpg" alt="夥伴圖片" class="img-fluid">
         <p id="skillLevel1">等級：1</p>
     </div>
   </div>
@@ -180,7 +182,7 @@
       </div>
       <!-- 在技能詳細信息模態框的modal-body中使用Card的格式 -->
       <div class="card">
-        <img id="selectedSkillImage" class="card-img-top" alt="選擇的技能圖片" width="50%">
+        <img id="selectedSkillImage" class="card-img-top" alt="選擇的夥伴圖片" width="50%">
         <div class="card-body">
             <h5 class="card-title" id="selectedSkillName">技能名稱</h5>
             <p class="card-text" id="selectedSkillDescription">技能詳細說明...</p>
@@ -600,7 +602,7 @@ $(document).ready(function () {
       level10: ""
     },
   };
-  var selectedSkillImg = ''; // 用來保存選中的技能圖片
+  var selectedSkillImg = ''; // 用來保存選中的夥伴圖片
   var selectedSkillBoxId = ''; // 用來保存選中的技能格子的ID
 
   // 技能清單的彈出視窗
@@ -636,12 +638,12 @@ $(document).ready(function () {
     // 設定拖拉的 bar 的範例
     var skillLevelInput = modal.find('#skillLevelInput');
     var currentSkillLevel = modal.find('#currentSkillLevel');
-    var skillImage = modal.find('#selectedSkillImage'); // 技能圖片的元素
+    var skillImage = modal.find('#selectedSkillImage'); // 夥伴圖片的元素
 
-    // 將技能圖片設置為選中的技能圖片
+    // 將夥伴圖片設置為選中的夥伴圖片
     skillImage.attr('src', selectedSkillImg);
 
-    // 縮小技能圖片
+    // 縮小夥伴圖片
     skillImage.css('max-width', '50%');
 
     skillLevelInput.change(function () {
@@ -688,47 +690,908 @@ $(document).ready(function () {
 });
 </script>
 
+<!--夥伴-->
+
+<!--夥伴配置-->
 <div class="container mt-4">
-  <h2>夥伴配置(撰寫中)&nbsp;&nbsp;魔力<span id="mpValue">0</span>/30</h2>
+  <h2>夥伴配置&nbsp;&nbsp;魔力<span id="mpValue">0</span>/30</h2>
   <div class="row">
-    <!-- 技能格子，lg以上顯示col-lg-2，其餘顯示col-4 -->
-    <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill1">
-        <img src="path/to/skill0.jpg" alt="技能圖片" class="img-fluid">
-        <p id="skillLevel1">等級：1</p>
+    <!-- 夥伴格子，lg以上顯示col-lg-2，其餘顯示col-4 -->
+    <div class="col-lg-2 col-4 partner-box" data-toggle="modal" data-target="#partnerListModal" id="partner1">
+        <img src="path/to/partner0.jpg" alt="夥伴圖片" class="img-fluid">
+        <p id="partnerLevel1">等級：1</p>
     </div>
-    <!-- 其他技能格子... -->
-    <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill2">
-        <img src="path/to/skill0.jpg" alt="技能圖片" class="img-fluid">
-        <p id="skillLevel1">等級：1</p>
+    <div class="col-lg-2 col-4 partner-box" data-toggle="modal" data-target="#partnerListModal" id="partner2">
+        <img src="path/to/partner0.jpg" alt="夥伴圖片" class="img-fluid">
+        <p id="partnerLevel1">等級：1</p>
     </div>
-    <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill3">
-        <img src="path/to/skill0.jpg" alt="技能圖片" class="img-fluid">
-        <p id="skillLevel1">等級：1</p>
+    <div class="col-lg-2 col-4 partner-box" data-toggle="modal" data-target="#partnerListModal" id="partner3">
+        <img src="path/to/partner0.jpg" alt="夥伴圖片" class="img-fluid">
+        <p id="partnerLevel1">等級：1</p>
     </div>
-    <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill4">
-        <img src="path/to/skill0.jpg" alt="技能圖片" class="img-fluid">
-        <p id="skillLevel1">等級：1</p>
+    <div class="col-lg-2 col-4 partner-box" data-toggle="modal" data-target="#partnerListModal" id="partner4">
+        <img src="path/to/partner0.jpg" alt="夥伴圖片" class="img-fluid">
+        <p id="partnerLevel1">等級：1</p>
     </div>
-    <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill5">
-        <img src="path/to/skill0.jpg" alt="技能圖片" class="img-fluid">
-        <p id="skillLevel1">等級：1</p>
+    <div class="col-lg-2 col-4 partner-box" data-toggle="modal" data-target="#partnerListModal" id="partner5">
+        <img src="path/to/partner0.jpg" alt="夥伴圖片" class="img-fluid">
+        <p id="partnerLevel1">等級：1</p>
     </div>
-    <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill6">
-        <img src="path/to/skill0.jpg" alt="技能圖片" class="img-fluid">
-        <p id="skillLevel1">等級：1</p>
+    <div class="col-lg-2 col-4 partner-box" data-toggle="modal" data-target="#partnerListModal" id="partner6">
+        <img src="path/to/partner0.jpg" alt="夥伴圖片" class="img-fluid">
+        <p id="partnerLevel1">等級：1</p>
     </div>
   </div>
 </div>
 
-<script>
-  // 使用JavaScript来更新数字
-  let mpValuerElement = document.getElementById('mpValue');
+<!-- 夥伴清單的彈出視窗 -->
+<div class="modal fade" id="partnerListModal" tabindex="-1" role="dialog" aria-labelledby="partnerListModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="partnerListModalLabel">夥伴清單</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- 夥伴清單內容 -->
+        <div class="container">
+          <div class="row">
+            <!-- 夥伴清單中的每個格子，包括圖片等信息 -->
+            <div id="partnerList0" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+              <img src="path/to/partner0.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList1" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner1.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList2" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner2.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList3" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner3.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList4" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner4.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList5" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner5.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList6" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner6.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList7" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner7.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList8" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner8.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList9" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner9.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList10" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner10.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList11" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner11.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList12" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner12.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList13" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner13.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList14" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner14.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList15" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner15.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList16" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner16.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList17" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner17.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList18" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner18.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList19" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner19.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList20" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner20.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList21" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner21.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList22" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner22.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList23" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner23.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList24" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner24.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList25" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner25.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList26" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner26.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList27" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner27.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList28" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner28.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList29" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner29.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList30" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner30.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList31" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner31.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList32" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner32.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList33" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner33.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList34" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner34.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList35" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner35.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList36" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner36.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList37" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner37.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList38" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner38.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList39" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner39.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList40" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner40.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList41" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner41.jpg" class="img-fluid">
+            </div>
+            <div id="partnerList42" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
+                <img src="path/to/partner42.jpg" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  // 假设你有一个变量来存储可变的数字
-  let mpValue = 0;
+<!-- 夥伴詳細信息的彈出視窗 -->
+<div class="modal fade" id="partnerDetailModal" tabindex="-1" role="dialog" aria-labelledby="partnerDetailModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="partnerDetailModalLabel">夥伴詳細信息</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!-- 在夥伴詳細信息模態框的modal-body中使用Card的格式 -->
+      <div class="card">
+        <img id="selectedPartnerImage" class="card-img-top" alt="選擇的夥伴圖片" width="50%">
+        <div class="card-body">
+            <h5 class="card-title" id="selectedPartnerName">夥伴名稱</h5>
+            <p class="card-text" id="selectedPartnerDescription">夥伴詳細說明...</p>
+          <div class="form-group">
+            <label for="partnerLevelInput">等級設定：</label>
+            <input type="range" class="form-control-range" id="partnerLevelInput" min="1" max="120" value="1">
+            <span id="currentPartnerLevel">等級：1</span>
+          </div>
+          <button type="button" class="btn btn-primary" id="addPartnerBtn">新增夥伴</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  // 更新 span 元素的内容
-  mpValuerElement.textContent = mpValue;
+<script>//夥伴配置JS
+  $(document).ready(function () {
+    var partnersData = {
+    partner0: {
+      name: "",
+      description: ""
+    },
+    partner1: {
+      name: "",
+      description: "",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner2: {
+      name: "",
+      description: "",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner3: {
+      name: "",
+      description: "",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner4: {
+      name: "",
+      description: "",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner5: {
+      name: "",
+      description: "",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner6: {
+      name: "",
+      description: "",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner7: {
+      name: "",
+      description: "",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner8: {
+      name: "",
+      description: "",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner9: {
+      name: "",
+      description: "",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner10: {
+      name: "",
+      description: "",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner11: {
+      name: "",
+      description: "",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner12: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner13: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner14: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner15: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner16: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner17: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner18: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner19: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner20: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner21: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner22: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner23: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner24: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner25: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner26: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner27: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner28: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner29: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner30: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner31: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner32: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner33: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner34: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner35: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner36: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner37: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner38: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner39: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner40: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner41: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+    partner42: {
+      name: "",
+      description:"",
+      level1: "",
+      level2: "",
+      level3: "",
+      level4: "",
+      level5: "",
+      level6: "",
+      level7: "",
+      level8: "",
+      level9: "",
+      level10: ""
+    },
+  };
+  var selectedPartnerImg = ''; // 用來保存選中的夥伴圖片
+  var selectedPartnerBoxId = ''; // 用來保存選中的夥伴格子的ID
+
+  // 夥伴清單的彈出視窗
+  $('#partnerListModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget);
+    var modal = $(this);
+
+    // 夥伴清單中的每個格子，包括圖片等信息
+    modal.find('.partner-list-box').click(function () {
+      var partnerId = $(this).attr('id').replace('partnerList', '');
+      var selectedPartnerName=document.getElementById("selectedPartnerName");
+      var selectedPartnerDescription=document.getElementById("selectedPartnerDescription");
+      partnerId = parseInt(partnerId);
+      var selectedPartner = partnersData['partner' + partnerId];
+
+      selectedPartnerImg = $(this).find('img').attr('src');
+      selectedPartnerName.innerText=selectedPartner.name;
+      selectedPartnerDescription.innerText=selectedPartner.description;
+    });
+});
+
+  // 夥伴詳細信息模態框
+  $('#partnerDetailModal').on('show.bs.modal', function (event) {
+    var mpValuerElement = document.getElementById('mpValue');
+    var button = $(event.relatedTarget);
+    var partnerId = button.attr('id').replace('partnerList', ''); // 獲取夥伴的 ID
+    var modal = $(this);
+    
+    var selectedPartner = partnersData['partner' + partnerId];
+
+    // 在模態框標題中顯示夥伴名稱
+    modal.find('.modal-title').text('夥伴詳細信息');
+
+    // 設定拖拉的 bar 的範例
+    var partnerLevelInput = modal.find('#partnerLevelInput');
+    var currentPartnerLevel = modal.find('#currentPartnerLevel');
+    var partnerImage = modal.find('#selectedPartnerImage'); // 夥伴圖片的元素
+
+    // 將夥伴圖片設置為選中的夥伴圖片
+    partnerImage.attr('src', selectedPartnerImg);
+
+    // 縮小夥伴圖片
+    partnerImage.css('max-width', '50%');
+
+    partnerLevelInput.change(function () {
+      var selectedLevel = partnerLevelInput.val();
+      var selectPartnerLevel1 = selectedPartner['level1'];
+      var selectPartnerLevel = selectedPartner['level'+selectedLevel];
+      currentPartnerLevel.text('等級：' + selectedLevel);
+
+      if(Array.isArray(selectPartnerLevel) && selectPartnerLevel.length > 0){
+        var areaDamagePercentValue = selectedPartner['level' + selectedLevel] || []; // 如果對應等級的值不存在，則使用空陣列
+        var i=0;
+        var partnerDescription = selectedPartner.description
+          .replace(/\{areaDamagePercent\}/g, areaDamagePercentValue[i++])
+          .replace(/\{damagePercent\}/g, areaDamagePercentValue[i]);
+      }else{
+        var partnerDescription = selectedPartner.description.replace(selectPartnerLevel1,selectPartnerLevel);
+      }
+      
+      // 更新夥伴詳細說明
+      modal.find('#selectedPartnerDescription').text(partnerDescription);
+
+      console.log('選擇的等級：' + selectedLevel);
+      // 在這裡可以進行相應的處理，比如顯示不同等級的夥伴效果
+    });
+
+    // 新增按鈕的點擊事件
+    modal.find('#addPartnerBtn').click(function () {
+      // 1. 更新最外層頁面上被點擊的夥伴配置
+      $('#' + selectedPartnerBoxId + ' img').attr('src', selectedPartnerImg);
+
+      // 2. 更新夥伴配置的夥伴名稱為等級：0
+      $('#' + selectedPartnerBoxId + ' p').text('等級：' + partnerLevelInput.val());
+
+      let mpValue = 10;
+
+      // 更新 span 元素的内容
+      mpValuerElement.textContent = mpValue;
+
+      // 3. 關閉夥伴詳細信息的模態框
+      $('.modal').modal('hide');
+    });
+  });
+
+  // 夥伴配置的每個格子的點擊事件
+  $('.partner-box').click(function () {
+    selectedPartnerBoxId = $(this).attr('id');
+    // 在這裡你可以進行一些其他的處理，比如顯示選中夥伴的詳細信息等
+  });
+});
+  
 </script>
 
 </body>
