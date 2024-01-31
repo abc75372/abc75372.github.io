@@ -16,7 +16,7 @@
 <!--頂端清單-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand fs-1" href="catHero_index.html" id="top">&nbsp&nbsp黑金喵農場</a>
-  <a class="navbar-brand" href="#">最後更新時間:24/01/11</a>
+  <a class="navbar-brand" href="#">最後更新時間:24/01/31</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -37,383 +37,223 @@
 
 <!--技能配置-->
 <div class="container mt-4">
-  <h2>技能配置</h2>
-  <div class="row">
-    <!-- 技能格子，lg以上顯示col-lg-2，其餘顯示col-4 -->
-    <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill1">
-        <img src="path/to/skill0.jpg" alt="夥伴圖片" class="img-fluid">
+    <h2>技能配置</h2>
+    <div class="row">
+      <!-- 技能格子，lg以上顯示col-lg-2，其餘顯示col-4 -->
+      <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill1">
+          <img src="path/to/skill/skill_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill2">
+          <img src="path/to/skill/skill_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill3">
+          <img src="path/to/skill/skill_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill4">
+          <img src="path/to/skill/skill_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill5">
+          <img src="path/to/skill/skill_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill6">
+          <img src="path/to/skill/skill_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
     </div>
-    <!-- 其他技能格子... -->
-    <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill2">
-        <img src="path/to/skill0.jpg" alt="夥伴圖片" class="img-fluid">
-    </div>
-    <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill3">
-        <img src="path/to/skill0.jpg" alt="夥伴圖片" class="img-fluid">
-    </div>
-    <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill4">
-        <img src="path/to/skill0.jpg" alt="夥伴圖片" class="img-fluid">
-    </div>
-    <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill5">
-        <img src="path/to/skill0.jpg" alt="夥伴圖片" class="img-fluid">
-    </div>
-    <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill6">
-        <img src="path/to/skill0.jpg" alt="夥伴圖片" class="img-fluid">
-    </div>
-  </div>
 </div>
-
+  
 <!-- 技能清單的彈出視窗 -->
 <div class="modal fade" id="skillListModal" tabindex="-1" role="dialog" aria-labelledby="skillListModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="skillListModalLabel">技能清單</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <!-- 技能清單內容 -->
-        <div class="container">
-          <div class="row">
-            <!-- 技能清單中的每個格子，包括圖片等信息 -->
-            <div id="skillList0" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-              <img src="path/to/skill0.jpg" class="img-fluid">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="skillListModalLabel">技能清單</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- 技能清單內容 -->
+          <div class="container">
+            <div class="row" id="skillListContainer">
+              <!-- 技能清單中的每個格子，包括圖片等信息 -->
             </div>
-            <div id="skillList1" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill1.jpg" class="img-fluid">
-            </div>
-            <div id="skillList2" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill2.jpg" class="img-fluid">
-            </div>
-            <div id="skillList3" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill3.jpg" class="img-fluid">
-            </div>
-            <div id="skillList4" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill4.jpg" class="img-fluid">
-            </div>
-            <div id="skillList5" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill5.jpg" class="img-fluid">
-            </div>
-            <div id="skillList6" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill6.jpg" class="img-fluid">
-            </div>
-            <div id="skillList7" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill7.jpg" class="img-fluid">
-            </div>
-            <div id="skillList8" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill8.jpg" class="img-fluid">
-            </div>
-            <div id="skillList9" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill9.jpg" class="img-fluid">
-            </div>
-            <div id="skillList10" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill10.jpg" class="img-fluid">
-            </div>
-            <div id="skillList11" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill11.jpg" class="img-fluid">
-            </div>
-            <div id="skillList12" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill12.jpg" class="img-fluid">
-            </div>
-            <div id="skillList13" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill13.jpg" class="img-fluid">
-            </div>
-            <div id="skillList14" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill14.jpg" class="img-fluid">
-            </div>
-            <div id="skillList15" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill15.jpg" class="img-fluid">
-            </div>
-            <div id="skillList16" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill16.jpg" class="img-fluid">
-            </div>
-            <div id="skillList17" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill17.jpg" class="img-fluid">
-            </div>
-            <div id="skillList18" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill18.jpg" class="img-fluid">
-            </div>
-            <div id="skillList19" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill19.jpg" class="img-fluid">
-            </div>
-            <div id="skillList20" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill20.jpg" class="img-fluid">
-            </div>
-            <div id="skillList21" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill21.jpg" class="img-fluid">
-            </div>
-            <div id="skillList22" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill22.jpg" class="img-fluid">
-            </div>
-            <div id="skillList23" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill23.jpg" class="img-fluid">
-            </div>
-            <div id="skillList24" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill24.jpg" class="img-fluid">
-            </div>
-            <div id="skillList25" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill25.jpg" class="img-fluid">
-            </div>
-            <div id="skillList26" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill26.jpg" class="img-fluid">
-            </div>
-            <div id="skillList27" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill27.jpg" class="img-fluid">
-            </div>
-            <div id="skillList28" class="col-3 mb-3 skill-list-box" data-toggle="modal" data-target="#skillDetailModal">
-                <img src="path/to/skill28.jpg" class="img-fluid">
-            </div>
-            <!-- 其他技能清單中的每個格子... -->
           </div>
         </div>
       </div>
     </div>
-  </div>
 </div>
-
+  
 <!--技能配置JS-->
 <script>
-  $(document).ready(function() {
-    // 技能清單中的每個格子點擊事件
-    $('.skill-list-box').on('click', function() {
-      // 獲取被點擊的圖片的src
-      var selectedSkillImage = $(this).find('img').attr('src');
-
-      // 獲取被點擊的技能格子的ID
-      var skillBoxId = $('#skillListModal').data('skillBoxId');
-
-      // 將選定的圖片設置為相應技能格子的圖片
-      $('#' + skillBoxId + ' img').attr('src', selectedSkillImage);
-
-      // 關閉技能清單的彈出視窗
-      $('#skillListModal').modal('hide');
+      var skillPath = "path/to/skill/skill_";
+      var skills = [
+          skillPath + "empty.jpg", skillPath + "dinnertime.jpg", skillPath + "ratbomb.jpg", skillPath + "supercat.jpg",
+          skillPath + "magiccircus.jpg", skillPath + "dessertcoma.jpg", skillPath + "leafslash.jpg", skillPath + "icythorns.jpg",
+          skillPath + "scraatch.jpg", skillPath + "grrrrr.jpg", skillPath + "clusterbomb.jpg", skillPath + "fishrain.jpg", 
+          skillPath + "scarerow.jpg", skillPath + "tornado.jpg", skillPath + "magicshield.jpg", skillPath + "chickenrun.jpg", 
+          skillPath + "chakra.jpg", skillPath + "howl.jpg", skillPath + "blackcloud.jpg", skillPath + "sprayink.jpg", 
+          skillPath + "burgerparty.jpg", skillPath + "magiccrossbow.jpg", skillPath + "fullmoon.jpg", skillPath + "catteor.jpg", 
+          skillPath + "catlaser.jpg", skillPath + "clawpunch.jpg", skillPath + "piratesign.jpg", skillPath + "nocturnesummon.jpg", 
+          skillPath + "blackhole.jpg", skillPath + "dreadnoughtwhale.jpg", skillPath + "shamancat.jpg", skillPath + "catheroes.jpg", skillPath + "oceanspunishment.jpg", 
+      ];
+  
+      var skillListContainer = document.getElementById('skillListContainer');
+  
+      for (var i = 0; i < skills.length; i++) {
+          var skillDiv = document.createElement('div');
+          skillDiv.id = 'skillList' + i;
+          skillDiv.className = 'col-3 mb-3 skill-list-box';
+          skillDiv.setAttribute('data-toggle', 'modal');
+          skillDiv.setAttribute('data-target', '#skillDetailModal');
+  
+          var skillImg = document.createElement('img');
+          skillImg.src = skills[i];
+          skillImg.className = 'img-fluid';
+  
+          skillDiv.appendChild(skillImg);
+          skillListContainer.appendChild(skillDiv);
+      }
+    $(document).ready(function() {
+      // 技能清單中的每個格子點擊事件
+      $('.skill-list-box').on('click', function() {
+        // 獲取被點擊的圖片的src
+        var selectedSkillImage = $(this).find('img').attr('src');
+  
+        // 獲取被點擊的技能格子的ID
+        var skillBoxId = $('#skillListModal').data('skillBoxId');
+  
+        // 將選定的圖片設置為相應技能格子的圖片
+        $('#' + skillBoxId + ' img').attr('src', selectedSkillImage);
+  
+        // 關閉技能清單的彈出視窗
+        $('#skillListModal').modal('hide');
+      });
+  
+      // 技能格子點擊事件，設置技能清單彈出視窗相應的技能格子ID
+      $('.skill-box').on('click', function() {
+        var skillBoxId = $(this).attr('id');
+        $('#skillListModal').data('skillBoxId', skillBoxId);
+      });
     });
-
-    // 技能格子點擊事件，設置技能清單彈出視窗相應的技能格子ID
-    $('.skill-box').on('click', function() {
-      var skillBoxId = $(this).attr('id');
-      $('#skillListModal').data('skillBoxId', skillBoxId);
-    });
-  });
 </script>
-
 
 <!--夥伴配置-->
 <div class="container mt-4">
-  <h2>夥伴配置</h2>
-  <div class="row"><!-- 夥伴格子，lg以上顯示col-lg-2，其餘顯示col-4 -->
-    <div class="col-lg-2 col-4 partner-box" data-toggle="modal" data-target="#partnerListModal" id="partner1">
-        <img src="path/to/partner0.jpg" alt="夥伴圖片" class="img-fluid">
-    </div>
-    <div class="col-lg-2 col-4 partner-box" data-toggle="modal" data-target="#partnerListModal" id="partner2">
-        <img src="path/to/partner0.jpg" alt="夥伴圖片" class="img-fluid">
-    </div>
-    <div class="col-lg-2 col-4 partner-box" data-toggle="modal" data-target="#partnerListModal" id="partner3">
-        <img src="path/to/partner0.jpg" alt="夥伴圖片" class="img-fluid">
-    </div>
-    <div class="col-lg-2 col-4 partner-box" data-toggle="modal" data-target="#partnerListModal" id="partner4">
-        <img src="path/to/partner0.jpg" alt="夥伴圖片" class="img-fluid">
-    </div>
-    <div class="col-lg-2 col-4 partner-box" data-toggle="modal" data-target="#partnerListModal" id="partner5">
-        <img src="path/to/partner0.jpg" alt="夥伴圖片" class="img-fluid">
-    </div>
-    <div class="col-lg-2 col-4 partner-box" data-toggle="modal" data-target="#partnerListModal" id="partner6">
-        <img src="path/to/partner0.jpg" alt="夥伴圖片" class="img-fluid">
-    </div>
-  </div>
-</div>
-
-<!-- 夥伴清單的彈出視窗 -->
-<div class="modal fade" id="partnerListModal" tabindex="-1" role="dialog" aria-labelledby="partnerListModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="partnerListModalLabel">夥伴清單</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+    <h2>夥伴配置</h2>
+    <div class="row"><!-- 夥伴格子，lg以上顯示col-lg-2，其餘顯示col-4 -->
+      <div class="col-lg-2 col-4 companion-box" data-toggle="modal" data-target="#companionListModal" id="companion1">
+          <img src="path/to/companion/companion_empty.jpg" alt="夥伴圖片" class="img-fluid">
       </div>
-      <div class="modal-body">
-        <!-- 夥伴清單內容 -->
-        <div class="container">
-          <div class="row">
-            <!-- 夥伴清單中的每個格子，包括圖片等信息 -->
-            <div id="partnerList0" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-              <img src="path/to/partner0.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList1" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner1.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList2" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner2.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList3" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner3.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList4" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner4.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList5" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner5.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList6" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner6.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList7" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner7.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList8" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner8.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList9" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner9.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList10" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner10.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList11" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner11.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList12" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner12.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList13" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner13.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList14" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner14.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList15" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner15.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList16" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner16.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList17" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner17.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList18" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner18.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList19" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner19.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList20" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner20.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList21" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner21.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList22" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner22.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList23" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner23.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList24" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner24.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList25" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner25.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList26" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner26.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList27" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner27.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList28" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner28.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList29" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner29.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList30" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner30.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList31" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner31.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList32" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner32.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList33" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner33.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList34" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner34.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList35" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner35.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList36" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner36.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList37" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner37.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList38" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner38.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList39" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner39.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList40" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner40.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList41" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner41.jpg" class="img-fluid">
-            </div>
-            <div id="partnerList42" class="col-3 mb-3 partner-list-box" data-toggle="modal" data-target="#partnerDetailModal">
-                <img src="path/to/partner42.jpg" class="img-fluid">
+      <div class="col-lg-2 col-4 companion-box" data-toggle="modal" data-target="#companionListModal" id="companion2">
+          <img src="path/to/companion/companion_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 companion-box" data-toggle="modal" data-target="#companionListModal" id="companion3">
+          <img src="path/to/companion/companion_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 companion-box" data-toggle="modal" data-target="#companionListModal" id="companion4">
+          <img src="path/to/companion/companion_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 companion-box" data-toggle="modal" data-target="#companionListModal" id="companion5">
+          <img src="path/to/companion/companion_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 companion-box" data-toggle="modal" data-target="#companionListModal" id="companion6">
+          <img src="path/to/companion/companion_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+    </div>
+</div>
+  
+<!-- 夥伴清單的彈出視窗 -->
+<div class="modal fade" id="companionListModal" tabindex="-1" role="dialog" aria-labelledby="companionListModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="companionListModalLabel">夥伴清單</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- 夥伴清單內容 -->
+          <div class="container">
+            <div class="row" id="companionListContainer">
+              <!-- 夥伴清單中的每個格子，包括圖片等信息 -->
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 </div>
-
+  
 <!--夥伴配置JS-->
 <script>
-  $(document).ready(function() {
-    // 夥伴清單中的每個格子點擊事件
-    $('.partner-list-box').on('click', function() {
-      // 獲取被點擊的圖片的src
-      var selectedPartnerImage = $(this).find('img').attr('src');
-
-      // 獲取被點擊的夥伴格子的ID
-      var partnerBoxId = $('#partnerListModal').data('partnerBoxId');
-
-      // 將選定的圖片設置為相應夥伴格子的圖片
-      $('#' + partnerBoxId + ' img').attr('src', selectedPartnerImage);
-
-      // 關閉夥伴清單的彈出視窗
-      $('#partnerListModal').modal('hide');
+      var companionPath = "path/to/companion/companion_";
+      var companions = [
+          companionPath + "empty.jpg", companionPath + "sausage.jpg", companionPath + "sunny.jpg", companionPath + "bread.jpg", 
+          companionPath + "cracker.jpg", companionPath + "pudding.jpg", companionPath + "cake.jpg", companionPath + "tamago.jpg", 
+          companionPath + "carrot.jpg", companionPath + "clover.jpg", companionPath + "trunk.jpg", companionPath + "tacoyaki.jpg", 
+          companionPath + "chick.jpg", companionPath + "burger.jpg", companionPath + "jackdolf.jpg", companionPath + "mouse.jpg", 
+          companionPath + "pingu.jpg", companionPath + "ghostcat.jpg", companionPath + "bunny.jpg", companionPath + "firechick.jpg", 
+          companionPath + "tulip.jpg", companionPath + "phoenix.jpg", companionPath + "lightree.jpg", companionPath + "whopper.jpg", 
+          companionPath + "drake.jpg", companionPath + "spark.jpg", companionPath + "cookieknight.jpg", companionPath + "pumpky.jpg", 
+          companionPath + "steelfin.jpg", companionPath + "angrybomb.jpg", companionPath + "devilcat.jpg", companionPath + "bro.jpg", 
+          companionPath + "sparrow.jpg", companionPath + "catblack.jpg", companionPath + "jackstriker.jpg", companionPath + ".jpg", 
+          companionPath + ".jpg", companionPath + "lulu.jpg", companionPath + "roro.jpg", companionPath + "jacktiger.jpg", 
+          companionPath + "jackjaws.jpg", companionPath + "jackfly.jpg", companionPath + "warwolf.jpg", companionPath + "jackdaw.jpg", 
+          companionPath + "tanker.jpg", companionPath + "oracle.jpg"
+      ];
+  
+      var companionListContainer = document.getElementById('companionListContainer');
+  
+      for (var i = 0; i < companions.length; i++) {
+          var companionDiv = document.createElement('div');
+          companionDiv.id = 'companionList' + i;
+          companionDiv.className = 'col-3 mb-3 companion-list-box';
+          companionDiv.setAttribute('data-toggle', 'modal');
+          companionDiv.setAttribute('data-target', '#companionDetailModal');
+  
+          var companionImg = document.createElement('img');
+          companionImg.src = companions[i];
+          companionImg.className = 'img-fluid';
+  
+          companionDiv.appendChild(companionImg);
+          companionListContainer.appendChild(companionDiv);
+      }
+    $(document).ready(function() {
+      // 夥伴清單中的每個格子點擊事件
+      $('.companion-list-box').on('click', function() {
+        // 獲取被點擊的圖片的src
+        var selectedcompanionImage = $(this).find('img').attr('src');
+  
+        // 獲取被點擊的夥伴格子的ID
+        var companionBoxId = $('#companionListModal').data('companionBoxId');
+  
+        // 將選定的圖片設置為相應夥伴格子的圖片
+        $('#' + companionBoxId + ' img').attr('src', selectedcompanionImage);
+  
+        // 關閉夥伴清單的彈出視窗
+        $('#companionListModal').modal('hide');
+      });
+  
+      // 夥伴格子點擊事件，設置夥伴清單彈出視窗相應的夥伴格子ID
+      $('.companion-box').on('click', function() {
+        var companionBoxId = $(this).attr('id');
+        $('#companionListModal').data('companionBoxId', companionBoxId);
+      });
     });
-
-    // 夥伴格子點擊事件，設置夥伴清單彈出視窗相應的夥伴格子ID
-    $('.partner-box').on('click', function() {
-      var partnerBoxId = $(this).attr('id');
-      $('#partnerListModal').data('partnerBoxId', partnerBoxId);
-    });
-  });
 </script>
-
 
 <!--主動符文配置-->
 <div class="container mt-4">
   <h2>主動符文配置</h2>
   <div class="row"><!-- 主動符文格子，lg以上顯示col-lg-2，其餘顯示col-4 -->
     <div class="col-lg-2 col-4 activeRune-box" data-toggle="modal" data-target="#activeRuneListModal" id="activeRune1">
-        <img src="path/to/activeRune0.jpg" alt="主動符文圖片" class="img-fluid">
+        <img src="path/to/activerune/empty.jpg" alt="主動符文圖片" class="img-fluid">
     </div>
     <div class="col-lg-2 col-4 activeRune-box" data-toggle="modal" data-target="#activeRuneListModal" id="activeRune2">
-        <img src="path/to/activeRune0.jpg" alt="主動符文圖片" class="img-fluid">
+        <img src="path/to/activerune/empty.jpg" alt="主動符文圖片" class="img-fluid">
     </div>
     <div class="col-lg-2 col-4 activeRune-box" data-toggle="modal" data-target="#activeRuneListModal" id="activeRune3">
-        <img src="path/to/activeRune0.jpg" alt="主動符文圖片" class="img-fluid">
+        <img src="path/to/activerune/empty.jpg" alt="主動符文圖片" class="img-fluid">
   </div>
 </div>
 
@@ -430,116 +270,8 @@
       <div class="modal-body">
         <!-- 主動符文清單內容 -->
         <div class="container">
-          <div class="row">
+          <div class="row" id="activeRuneListContainer">
             <!-- 主動符文清單中的每個格子，包括圖片等信息 -->
-            <div id="activeRuneList0" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-              <img src="path/to/activeRune0.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList1" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune1.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList2" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune2.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList3" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune3.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList4" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune4.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList5" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune5.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList6" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune6.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList7" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune7.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList8" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune8.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList9" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune9.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList10" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune10.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList11" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune11.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList12" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune12.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList13" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune13.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList14" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune14.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList15" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune15.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList16" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune16.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList17" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune17.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList18" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune18.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList19" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune19.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList20" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune20.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList21" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune21.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList22" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune22.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList23" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune23.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList24" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune24.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList25" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune25.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList26" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune26.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList27" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune27.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList28" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune28.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList29" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune29.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList30" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune30.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList31" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune31.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList32" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune32.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList33" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune33.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList34" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune34.jpg" class="img-fluid">
-            </div>
-            <div id="activeRuneList35" class="col-3 mb-3 activeRune-list-box" data-toggle="modal" data-target="#activeRuneDetailModal">
-                <img src="path/to/activeRune35.jpg" class="img-fluid">
-            </div>
           </div>
         </div>
       </div>
@@ -549,6 +281,43 @@
 
 <!--主動符文配置JS-->
 <script>
+    var activerunePath = "path/to/activerune/";
+    var activeRunes = [
+        activerunePath + "empty.jpg", activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg",
+        activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg",
+        activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg",
+        activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg",
+        activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg",
+        activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg",
+        activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg",
+        activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg",
+        activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg",
+        activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg",
+        activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg",
+        activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg",
+        activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg",
+        activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg",
+        activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg",
+        activerunePath + ".jpg", activerunePath + "grrrrrenhanced.jpg", activerunePath + "supercatenhanced.jpg", activerunePath + "icythornsenhanced.jpg",
+        activerunePath + "dinnertimeenhanced.jpg", activerunePath + "dessertcomaenhanced.jpg", activerunePath + "scraatchenhanced.jpg", activerunePath + "clusterbombenhanced.jpg",
+        activerunePath + "ratbombenhanced.jpg", activerunePath + "randomuncommonskill.jpg", activerunePath + "magiccircusenhanced.jpg", activerunePath + "leafslashenhanced.jpg",
+    ];
+    var activeRuneListContainer = document.getElementById('activeRuneListContainer');
+
+    for (var i = 0; i < activeRunes.length; i++) {
+        var activeRuneDiv = document.createElement('div');
+        activeRuneDiv.id = 'activeRuneList' + i;
+        activeRuneDiv.className = 'col-3 mb-3 activeRune-list-box';
+        activeRuneDiv.setAttribute('data-toggle', 'modal');
+        activeRuneDiv.setAttribute('data-target', '#activeRuneDetailModal');
+
+        var activeRuneImg = document.createElement('img');
+        activeRuneImg.src = activeRunes[i];
+        activeRuneImg.className = 'img-fluid';
+
+        activeRuneDiv.appendChild(activeRuneImg);
+        activeRuneListContainer.appendChild(activeRuneDiv);
+    }
   $(document).ready(function() {
     // 主動符文清單中的每個格子點擊事件
     $('.activeRune-list-box').on('click', function() {
@@ -577,18 +346,18 @@
 <div class="container mt-4">
   <h2>輔助符文配置</h2>
   <div class="row"><!-- 輔助符文格子，lg以上顯示col-lg-2，其餘顯示col-4 -->
-    <div class="col-lg-2 col-3 supportRune-box" data-toggle="modal" data-target="#supportRuneListModal" id="supportRune1">
-        <img src="path/to/supportRune0.jpg" alt="輔助符文圖片" class="img-fluid">
-    </div>
-    <div class="col-lg-2 col-3 supportRune-box" data-toggle="modal" data-target="#supportRuneListModal" id="supportRune2">
-        <img src="path/to/supportRune0.jpg" alt="輔助符文圖片" class="img-fluid">
-    </div>
-    <div class="col-lg-2 col-3 supportRune-box" data-toggle="modal" data-target="#supportRuneListModal" id="supportRune3">
-        <img src="path/to/supportRune0.jpg" alt="輔助符文圖片" class="img-fluid">
-    </div>
-    <div class="col-lg-2 col-3 supportRune-box" data-toggle="modal" data-target="#supportRuneListModal" id="supportRune4">
-      <img src="path/to/supportRune0.jpg" alt="輔助符文圖片" class="img-fluid">
-    </div>
+      <div class="col-lg-2 col-3 supportRune-box" data-toggle="modal" data-target="#supportRuneListModal" id="supportRune1">
+          <img src="path/to/supportrune/supportrune_empty.jpg" alt="輔助符文圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-3 supportRune-box" data-toggle="modal" data-target="#supportRuneListModal" id="supportRune2">
+          <img src="path/to/supportrune/supportrune_empty.jpg" alt="輔助符文圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-3 supportRune-box" data-toggle="modal" data-target="#supportRuneListModal" id="supportRune3">
+          <img src="path/to/supportrune/supportrune_empty.jpg" alt="輔助符文圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-3 supportRune-box" data-toggle="modal" data-target="#supportRuneListModal" id="supportRune4">
+      <img src="path/to/supportrune/supportrune_empty.jpg" alt="輔助符文圖片" class="img-fluid">
+  </div>
 </div>
 
 <!-- 輔助符文清單的彈出視窗 -->
@@ -604,506 +373,8 @@
       <div class="modal-body">
         <!-- 輔助符文清單內容 -->
         <div class="container">
-          <div class="row">
+          <div class="row" id="supportRuneListContainer">
             <!-- 輔助符文清單中的每個格子，包括圖片等信息 -->
-            <div id="supportRuneList0" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-              <img src="path/to/supportRune0.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList1" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune1.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList2" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune2.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList3" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune3.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList4" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune4.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList5" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune5.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList6" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune6.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList7" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune7.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList8" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune8.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList9" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune9.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList10" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune10.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList11" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune11.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList12" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune12.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList13" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune13.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList14" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune14.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList15" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune15.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList16" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune16.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList17" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune17.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList18" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune18.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList19" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune19.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList20" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune20.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList21" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune21.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList22" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune22.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList23" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune23.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList24" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune24.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList25" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune25.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList26" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune26.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList27" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune27.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList28" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune28.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList29" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune29.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList30" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune30.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList31" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune31.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList32" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune32.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList33" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune33.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList34" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune34.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList35" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune35.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList36" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune36.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList37" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune37.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList38" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune38.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList39" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune39.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList40" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune40.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList41" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune41.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList42" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune42.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList43" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune43.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList44" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune44.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList45" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune45.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList46" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune46.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList47" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune47.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList48" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune48.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList49" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune49.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList50" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune50.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList51" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune51.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList52" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune52.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList53" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune53.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList54" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune54.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList55" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune55.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList56" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune56.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList57" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune57.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList58" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune58.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList59" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune59.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList60" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune60.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList61" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune61.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList62" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune62.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList63" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune63.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList64" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune64.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList65" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune65.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList66" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune66.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList67" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune67.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList68" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune68.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList69" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune69.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList70" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune70.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList71" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune71.jpg" class="img-fluid">
-            </div>
-              <div id="supportRuneList43" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune43.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList44" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune44.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList45" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune45.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList46" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune46.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList47" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune47.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList48" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune48.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList49" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune49.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList50" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune50.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList51" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune51.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList52" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune52.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList53" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune53.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList54" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune54.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList55" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune55.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList56" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune56.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList57" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune57.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList58" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune58.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList59" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune59.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList60" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune60.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList61" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune61.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList62" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune62.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList63" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune63.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList64" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune64.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList65" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune65.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList66" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune66.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList67" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune67.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList68" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune68.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList69" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune69.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList70" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune70.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList71" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune71.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList43" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune43.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList44" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune44.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList45" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune45.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList46" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune46.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList47" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune47.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList48" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune48.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList49" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune49.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList50" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune50.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList51" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune51.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList52" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune52.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList53" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune53.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList54" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune54.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList55" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune55.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList56" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune56.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList57" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune57.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList58" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune58.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList59" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune59.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList60" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune60.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList61" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune61.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList62" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune62.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList63" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune63.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList64" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune64.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList65" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune65.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList66" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune66.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList67" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune67.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList68" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune68.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList69" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune69.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList70" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune70.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList71" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune71.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList72" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune72.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList73" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune73.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList74" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune74.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList75" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune75.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList76" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune76.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList77" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune77.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList78" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune78.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList79" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune79.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList80" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune80.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList81" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune81.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList82" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune82.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList83" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune83.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList84" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune84.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList85" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune85.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList86" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune86.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList87" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune87.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList88" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune88.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList89" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune89.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList90" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune90.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList91" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune91.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList92" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune92.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList93" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune93.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList94" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune94.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList95" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune95.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList96" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune96.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList97" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune97.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList98" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune98.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList99" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune99.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList100" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune100.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList101" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune101.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList102" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune102.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList103" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune103.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList104" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune104.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList105" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune105.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList106" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune106.jpg" class="img-fluid">
-            </div>
-            <div id="supportRuneList107" class="col-3 mb-3 supportRune-list-box" data-toggle="modal" data-target="#supportRuneDetailModal">
-                <img src="path/to/supportRune107.jpg" class="img-fluid">
-            </div>
           </div>
         </div>
       </div>
@@ -1113,6 +384,53 @@
 
 <!--輔助符文配置JS-->
 <script>
+    var supportrunePath = "path/to/supportrune/supportrune_";
+    var supportRunes = [
+        supportrunePath + "empty.jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+    ];
+    var supportRuneListContainer = document.getElementById('supportRuneListContainer');
+
+    for (var i = 0; i < supportRunes.length; i++) {
+        var supportRuneDiv = document.createElement('div');
+        supportRuneDiv.id = 'supportRuneList' + i;
+        supportRuneDiv.className = 'col-3 mb-3 supportRune-list-box';
+        supportRuneDiv.setAttribute('data-toggle', 'modal');
+        supportRuneDiv.setAttribute('data-target', '#supportRuneDetailModal');
+
+        var supportRuneImg = document.createElement('img');
+        supportRuneImg.src = supportRunes[i];
+        supportRuneImg.className = 'img-fluid';
+
+        supportRuneDiv.appendChild(supportRuneImg);
+        supportRuneListContainer.appendChild(supportRuneDiv);
+    }
   $(document).ready(function() {
     // 輔助符文清單中的每個格子點擊事件
     $('.supportRune-list-box').on('click', function() {
