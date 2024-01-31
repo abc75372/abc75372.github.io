@@ -196,8 +196,8 @@
           companionPath + "tulip.jpg", companionPath + "phoenix.jpg", companionPath + "lightree.jpg", companionPath + "whopper.jpg", 
           companionPath + "drake.jpg", companionPath + "spark.jpg", companionPath + "cookieknight.jpg", companionPath + "pumpky.jpg", 
           companionPath + "steelfin.jpg", companionPath + "angrybomb.jpg", companionPath + "devilcat.jpg", companionPath + "bro.jpg", 
-          companionPath + "sparrow.jpg", companionPath + "catblack.jpg", companionPath + "jackstriker.jpg", companionPath + ".jpg", 
-          companionPath + ".jpg", companionPath + "lulu.jpg", companionPath + "roro.jpg", companionPath + "jacktiger.jpg", 
+          companionPath + "sparrow.jpg", companionPath + "catblack.jpg", companionPath + "jackstriker.jpg", companionPath + "werewolf.jpg", 
+          companionPath + "grom.jpg", companionPath + "lulu.jpg", companionPath + "roro.jpg", companionPath + "jacktiger.jpg", 
           companionPath + "jackjaws.jpg", companionPath + "jackfly.jpg", companionPath + "warwolf.jpg", companionPath + "jackdaw.jpg", 
           companionPath + "tanker.jpg", companionPath + "oracle.jpg"
       ];
@@ -346,26 +346,26 @@
 <div class="container mt-4">
   <h2>輔助符文配置</h2>
   <div class="row"><!-- 輔助符文格子，lg以上顯示col-lg-2，其餘顯示col-4 -->
-      <div class="col-lg-2 col-3 supportRune-box" data-toggle="modal" data-target="#supportRuneListModal" id="supportRune1">
-          <img src="path/to/supportrune/supportrune_empty.jpg" alt="輔助符文圖片" class="img-fluid">
+      <div class="col-lg-2 col-3 subRune-box" data-toggle="modal" data-target="#subRuneListModal" id="subRune1">
+          <img src="path/to/subrune/subrune_empty.jpg" alt="輔助符文圖片" class="img-fluid">
       </div>
-      <div class="col-lg-2 col-3 supportRune-box" data-toggle="modal" data-target="#supportRuneListModal" id="supportRune2">
-          <img src="path/to/supportrune/supportrune_empty.jpg" alt="輔助符文圖片" class="img-fluid">
+      <div class="col-lg-2 col-3 subRune-box" data-toggle="modal" data-target="#subRuneListModal" id="subRune2">
+          <img src="path/to/subrune/subrune_empty.jpg" alt="輔助符文圖片" class="img-fluid">
       </div>
-      <div class="col-lg-2 col-3 supportRune-box" data-toggle="modal" data-target="#supportRuneListModal" id="supportRune3">
-          <img src="path/to/supportrune/supportrune_empty.jpg" alt="輔助符文圖片" class="img-fluid">
+      <div class="col-lg-2 col-3 subRune-box" data-toggle="modal" data-target="#subRuneListModal" id="subRune3">
+          <img src="path/to/subrune/subrune_empty.jpg" alt="輔助符文圖片" class="img-fluid">
       </div>
-      <div class="col-lg-2 col-3 supportRune-box" data-toggle="modal" data-target="#supportRuneListModal" id="supportRune4">
-      <img src="path/to/supportrune/supportrune_empty.jpg" alt="輔助符文圖片" class="img-fluid">
+      <div class="col-lg-2 col-3 subRune-box" data-toggle="modal" data-target="#subRuneListModal" id="subRune4">
+      <img src="path/to/subrune/subrune_empty.jpg" alt="輔助符文圖片" class="img-fluid">
   </div>
 </div>
 
 <!-- 輔助符文清單的彈出視窗 -->
-<div class="modal fade" id="supportRuneListModal" tabindex="-1" role="dialog" aria-labelledby="supportRuneListModalLabel" aria-hidden="true">
+<div class="modal fade" id="subRuneListModal" tabindex="-1" role="dialog" aria-labelledby="subRuneListModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="supportRuneListModalLabel">輔助符文清單</h5>
+        <h5 class="modal-title" id="subRuneListModalLabel">輔助符文清單</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -373,7 +373,7 @@
       <div class="modal-body">
         <!-- 輔助符文清單內容 -->
         <div class="container">
-          <div class="row" id="supportRuneListContainer">
+          <div class="row" id="subRuneListContainer">
             <!-- 輔助符文清單中的每個格子，包括圖片等信息 -->
           </div>
         </div>
@@ -384,73 +384,73 @@
 
 <!--輔助符文配置JS-->
 <script>
-    var supportrunePath = "path/to/supportrune/supportrune_";
-    var supportRunes = [
-        supportrunePath + "empty.jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
-        supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", supportrunePath + ".jpg", 
+    var subrunePath = "path/to/subrune/subrune_";
+    var subRunes = [
+        subrunePath + "empty.jpg", subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", 
+        subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", 
+        subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", 
+        subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", 
+        subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", 
+        subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", 
+        subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", 
+        subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", 
+        subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", 
+        subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", 
+        subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", 
+        subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", 
+        subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", 
+        subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", 
+        subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", 
+        subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", 
+        subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", 
+        subrunePath + ".jpg", subrunePath + "rare_critchance.jpg", subrunePath + ".jpg", subrunePath + ".jpg", 
+        subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", 
+        subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", 
+        subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", 
+        subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", subrunePath + ".jpg", 
+        subrunePath + "uncommon_plantenhanced.jpg", subrunePath + "uncommon_foodenhanced.jpg", subrunePath + "uncommon_hamburgerenhanced.jpg", subrunePath + "uncommon_doubleshot.jpg", 
+        subrunePath + "uncommon_magicenhanced.jpg", subrunePath + "uncommon_largeenhanced.jpg", subrunePath + "uncommon_tripleshot.jpg", 
+        subrunePath + "uncommon_critdmg.jpg", subrunePath + "uncommon_machineenhanced.jpg", subrunePath + "uncommon_catenhanced.jpg", subrunePath + "uncommon_animalenhanced.jpg", 
+        subrunePath + "uncommon_chickenenhanced.jpg", subrunePath + "uncommon_bossattack.jpg", subrunePath + "uncommon_cloudenhanced.jpg", subrunePath + "uncommon_fishboost.jpg", 
+        subrunePath + "uncommon_dessertenhanced.jpg", subrunePath + "uncommon_mediumenhanced.jpg", subrunePath + "uncommon_atk.jpg", subrunePath + "uncommon_wolfenhanced.jpg", 
+        subrunePath + "uncommon_critchance.jpg", subrunePath + "uncommon_sharkenhanced.jpg", subrunePath + "uncommon_smallenhanced.jpg", subrunePath + "uncommon_dragonenhanced.jpg", 
     ];
-    var supportRuneListContainer = document.getElementById('supportRuneListContainer');
+    var subRuneListContainer = document.getElementById('subRuneListContainer');
 
-    for (var i = 0; i < supportRunes.length; i++) {
-        var supportRuneDiv = document.createElement('div');
-        supportRuneDiv.id = 'supportRuneList' + i;
-        supportRuneDiv.className = 'col-3 mb-3 supportRune-list-box';
-        supportRuneDiv.setAttribute('data-toggle', 'modal');
-        supportRuneDiv.setAttribute('data-target', '#supportRuneDetailModal');
+    for (var i = 0; i < subRunes.length; i++) {
+        var subRuneDiv = document.createElement('div');
+        subRuneDiv.id = 'subRuneList' + i;
+        subRuneDiv.className = 'col-3 mb-3 subRune-list-box';
+        subRuneDiv.setAttribute('data-toggle', 'modal');
+        subRuneDiv.setAttribute('data-target', '#subRuneDetailModal');
 
-        var supportRuneImg = document.createElement('img');
-        supportRuneImg.src = supportRunes[i];
-        supportRuneImg.className = 'img-fluid';
+        var subRuneImg = document.createElement('img');
+        subRuneImg.src = subRunes[i];
+        subRuneImg.className = 'img-fluid';
 
-        supportRuneDiv.appendChild(supportRuneImg);
-        supportRuneListContainer.appendChild(supportRuneDiv);
+        subRuneDiv.appendChild(subRuneImg);
+        subRuneListContainer.appendChild(subRuneDiv);
     }
   $(document).ready(function() {
     // 輔助符文清單中的每個格子點擊事件
-    $('.supportRune-list-box').on('click', function() {
+    $('.subRune-list-box').on('click', function() {
       // 獲取被點擊的圖片的src
-      var selectedSupportRuneImage = $(this).find('img').attr('src');
+      var selectedsubRuneImage = $(this).find('img').attr('src');
 
       // 獲取被點擊的輔助符文格子的ID
-      var supportRuneBoxId = $('#supportRuneListModal').data('supportRuneBoxId');
+      var subRuneBoxId = $('#subRuneListModal').data('subRuneBoxId');
 
       // 將選定的圖片設置為相應輔助符文格子的圖片
-      $('#' + supportRuneBoxId + ' img').attr('src', selectedSupportRuneImage);
+      $('#' + subRuneBoxId + ' img').attr('src', selectedsubRuneImage);
 
       // 關閉輔助符文清單的彈出視窗
-      $('#supportRuneListModal').modal('hide');
+      $('#subRuneListModal').modal('hide');
     });
 
     // 輔助符文格子點擊事件，設置輔助符文清單彈出視窗相應的輔助符文格子ID
-    $('.supportRune-box').on('click', function() {
-      var supportRuneBoxId = $(this).attr('id');
-      $('#supportRuneListModal').data('supportRuneBoxId', supportRuneBoxId);
+    $('.subRune-box').on('click', function() {
+      var subRuneBoxId = $(this).attr('id');
+      $('#subRuneListModal').data('subRuneBoxId', subRuneBoxId);
     });
   });
 </script>
