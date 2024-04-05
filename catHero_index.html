@@ -5,23 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <title>黑金喵農場</title>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 </head>
 <body>
 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 <!--頂端清單-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand fs-1" href="catHero_index.html" id="top">&nbsp&nbsp黑金喵農場</a>
-  <a class="navbar-brand" href="#">最後更新時間:24/03/13</a>
+  <a class="navbar-brand" href="#">更新版本：2.7.1</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse fs-4" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="catHero_skill.html">配置器</a>
-      </li>
       <li class="nav-item">
         <a class="nav-link" href="https://reurl.cc/lgYdr9">遊戲各項資訊</a>
       </li>
@@ -32,40 +32,424 @@
   </div>
 </nav>
 
-<br>
-<div class="row" style="background-color: rgba(229, 243, 220);">
-    <p class="fs-1 text-center">歡迎到黑金喵農場</p>
-    <p class="fs-1 text-center">目前版本2.4.0</p>
+<!--技能配置-->
+<div class="container mt-4">
+    <h2>技能配置</h2>
+    <div class="row">
+      <!-- 技能格子，lg以上顯示col-lg-2，其餘顯示col-4 -->
+      <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill1">
+          <img src="path/to/skill/skill_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill2">
+          <img src="path/to/skill/skill_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill3">
+          <img src="path/to/skill/skill_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill4">
+          <img src="path/to/skill/skill_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill5">
+          <img src="path/to/skill/skill_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill6">
+          <img src="path/to/skill/skill_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+    </div>
 </div>
-<br>
-<div class="row" style="background-color: rgba(220, 243, 223);">
-  <p>【激戰之地】</p>
-    <p>新增「超大型怪獸」</p>
-    <p>超大型怪獸以「公會」為單位進行戰鬥，依據排名發放獎勵給參與的成員</p>
+  
+<!-- 技能清單的彈出視窗 -->
+<div class="modal fade" id="skillListModal" tabindex="-1" role="dialog" aria-labelledby="skillListModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="skillListModalLabel">技能清單</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- 技能清單內容 -->
+          <div class="container">
+            <div class="row" id="skillListContainer">
+              <!-- 技能清單中的每個格子，包括圖片等信息 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  
+<!--技能配置JS-->
+<script>
+      var skillPath = "path/to/skill/skill_";
+      var skills = [
+          skillPath + "empty.jpg", skillPath + "dinnertime.jpg", skillPath + "ratbomb.jpg", skillPath + "supercat.jpg",
+          skillPath + "magiccircus.jpg", skillPath + "dessertcoma.jpg", skillPath + "leafslash.jpg", skillPath + "icythorns.jpg",
+          skillPath + "scraatch.jpg", skillPath + "grrrrr.jpg", skillPath + "clusterbomb.jpg", skillPath + "fishrain.jpg", 
+          skillPath + "scarerow.jpg", skillPath + "tornado.jpg", skillPath + "magicshield.jpg", skillPath + "chickenrun.jpg", 
+          skillPath + "chakra.jpg", skillPath + "howl.jpg", skillPath + "blackcloud.jpg", skillPath + "sprayink.jpg", 
+          skillPath + "burgerparty.jpg", skillPath + "magiccrossbow.jpg", skillPath + "fullmoon.jpg", skillPath + "catteor.jpg", 
+          skillPath + "catlaser.jpg", skillPath + "clawpunch.jpg", skillPath + "piratesign.jpg", skillPath + "nocturnesummon.jpg", 
+          skillPath + "blackhole.jpg", skillPath + "dreadnoughtwhale.jpg", skillPath + "shamancat.jpg", skillPath + "catheroes.jpg", skillPath + "oceanspunishment.jpg", 
+      ];
+  
+      var skillListContainer = document.getElementById('skillListContainer');
+  
+      for (var i = 0; i < skills.length; i++) {
+          var skillDiv = document.createElement('div');
+          skillDiv.id = 'skillList' + i;
+          skillDiv.className = 'col-3 mb-3 skill-list-box';
+          skillDiv.setAttribute('data-toggle', 'modal');
+          skillDiv.setAttribute('data-target', '#skillDetailModal');
+  
+          var skillImg = document.createElement('img');
+          skillImg.src = skills[i];
+          skillImg.className = 'img-fluid';
+  
+          skillDiv.appendChild(skillImg);
+          skillListContainer.appendChild(skillDiv);
+      }
+    $(document).ready(function() {
+      // 技能清單中的每個格子點擊事件
+      $('.skill-list-box').on('click', function() {
+        // 獲取被點擊的圖片的src
+        var selectedSkillImage = $(this).find('img').attr('src');
+  
+        // 獲取被點擊的技能格子的ID
+        var skillBoxId = $('#skillListModal').data('skillBoxId');
+  
+        // 將選定的圖片設置為相應技能格子的圖片
+        $('#' + skillBoxId + ' img').attr('src', selectedSkillImage);
+  
+        // 關閉技能清單的彈出視窗
+        $('#skillListModal').modal('hide');
+      });
+  
+      // 技能格子點擊事件，設置技能清單彈出視窗相應的技能格子ID
+      $('.skill-box').on('click', function() {
+        var skillBoxId = $(this).attr('id');
+        $('#skillListModal').data('skillBoxId', skillBoxId);
+      });
+    });
+</script>
 
-  <p>【次元空間】</p>
-    <p>新增利用特定裝備解鎖次元空間的「聖遺物系統」</p>
-    <p>解鎖聖遺物可獲得特殊能力</p>
+<!--夥伴配置-->
+<div class="container mt-4">
+    <h2>夥伴配置</h2>
+    <div class="row"><!-- 夥伴格子，lg以上顯示col-lg-2，其餘顯示col-4 -->
+      <div class="col-lg-2 col-4 companion-box" data-toggle="modal" data-target="#companionListModal" id="companion1">
+          <img src="path/to/companion/companion_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 companion-box" data-toggle="modal" data-target="#companionListModal" id="companion2">
+          <img src="path/to/companion/companion_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 companion-box" data-toggle="modal" data-target="#companionListModal" id="companion3">
+          <img src="path/to/companion/companion_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 companion-box" data-toggle="modal" data-target="#companionListModal" id="companion4">
+          <img src="path/to/companion/companion_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 companion-box" data-toggle="modal" data-target="#companionListModal" id="companion5">
+          <img src="path/to/companion/companion_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 companion-box" data-toggle="modal" data-target="#companionListModal" id="companion6">
+          <img src="path/to/companion/companion_empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+    </div>
+</div>
+  
+<!-- 夥伴清單的彈出視窗 -->
+<div class="modal fade" id="companionListModal" tabindex="-1" role="dialog" aria-labelledby="companionListModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="companionListModalLabel">夥伴清單</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- 夥伴清單內容 -->
+          <div class="container">
+            <div class="row" id="companionListContainer">
+              <!-- 夥伴清單中的每個格子，包括圖片等信息 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  
+<!--夥伴配置JS-->
+<script>
+      var companionPath = "path/to/companion/companion_";
+      var companions = [
+          companionPath + "empty.jpg", companionPath + "sausage.jpg", companionPath + "sunny.jpg", companionPath + "bread.jpg", 
+          companionPath + "cracker.jpg", companionPath + "pudding.jpg", companionPath + "cake.jpg", companionPath + "tamago.jpg", 
+          companionPath + "carrot.jpg", companionPath + "clover.jpg", companionPath + "trunk.jpg", companionPath + "tacoyaki.jpg", 
+          companionPath + "chick.jpg", companionPath + "burger.jpg", companionPath + "jackdolf.jpg", companionPath + "mouse.jpg", 
+          companionPath + "pingu.jpg", companionPath + "ghostcat.jpg", companionPath + "bunny.jpg", companionPath + "firechick.jpg", 
+          companionPath + "tulip.jpg", companionPath + "phoenix.jpg", companionPath + "lightree.jpg", companionPath + "whopper.jpg", 
+          companionPath + "drake.jpg", companionPath + "spark.jpg", companionPath + "cookieknight.jpg", companionPath + "pumpky.jpg", 
+          companionPath + "steelfin.jpg", companionPath + "angrybomb.jpg", companionPath + "devilcat.jpg", companionPath + "bro.jpg", 
+          companionPath + "sparrow.jpg", companionPath + "catblack.jpg", companionPath + "jackstriker.jpg", companionPath + "werewolf.jpg", 
+          companionPath + "grom.jpg", companionPath + "lulu.jpg", companionPath + "roro.jpg", companionPath + "jacktiger.jpg", 
+          companionPath + "jackjaws.jpg", companionPath + "jackfly.jpg", companionPath + "warwolf.jpg", companionPath + "jackdaw.jpg", 
+          companionPath + "tanker.jpg", companionPath + "oracle.jpg"
+      ];
+  
+      var companionListContainer = document.getElementById('companionListContainer');
+  
+      for (var i = 0; i < companions.length; i++) {
+          var companionDiv = document.createElement('div');
+          companionDiv.id = 'companionList' + i;
+          companionDiv.className = 'col-3 mb-3 companion-list-box';
+          companionDiv.setAttribute('data-toggle', 'modal');
+          companionDiv.setAttribute('data-target', '#companionDetailModal');
+  
+          var companionImg = document.createElement('img');
+          companionImg.src = companions[i];
+          companionImg.className = 'img-fluid';
+  
+          companionDiv.appendChild(companionImg);
+          companionListContainer.appendChild(companionDiv);
+      }
+    $(document).ready(function() {
+      // 夥伴清單中的每個格子點擊事件
+      $('.companion-list-box').on('click', function() {
+        // 獲取被點擊的圖片的src
+        var selectedcompanionImage = $(this).find('img').attr('src');
+  
+        // 獲取被點擊的夥伴格子的ID
+        var companionBoxId = $('#companionListModal').data('companionBoxId');
+  
+        // 將選定的圖片設置為相應夥伴格子的圖片
+        $('#' + companionBoxId + ' img').attr('src', selectedcompanionImage);
+  
+        // 關閉夥伴清單的彈出視窗
+        $('#companionListModal').modal('hide');
+      });
+  
+      // 夥伴格子點擊事件，設置夥伴清單彈出視窗相應的夥伴格子ID
+      $('.companion-box').on('click', function() {
+        var companionBoxId = $(this).attr('id');
+        $('#companionListModal').data('companionBoxId', companionBoxId);
+      });
+    });
+</script>
 
-  <p>【合成裝備】</p>
-    <p>可使用四個相同部位的裝備合成為同一等或下一等級的裝備</p>
-    <p>合成後裝備之交易次數、強化耐度和強化數值將「初始化」</p>
-
-  <p>【覺醒夥伴】</p>
-   <p> 夥伴最高星級擴張至「16星」</p>
-   <p> 賦予傳說等級以上的夥伴第五個「覺醒效果」，效果於121/131/141/151等解鎖</p>
-
-  <p>【活動】</p>
-   <p>「活動外觀捲土重來」可獲得以往活動限定外觀</p>
-   <p>「符文合成」完成所有任務可獲得傳說絕對召喚特殊符文</p>
-
-  <p>【坐騎】</p>
-   <p>新增6種坐騎外觀</p>
+<!--主動符文配置-->
+<div class="container mt-4">
+  <h2>主動符文配置</h2>
+  <div class="row"><!-- 主動符文格子，lg以上顯示col-lg-2，其餘顯示col-4 -->
+    <div class="col-lg-2 col-4 activeRune-box" data-toggle="modal" data-target="#activeRuneListModal" id="activeRune1">
+        <img src="path/to/activerune/empty.jpg" alt="主動符文圖片" class="img-fluid">
+    </div>
+    <div class="col-lg-2 col-4 activeRune-box" data-toggle="modal" data-target="#activeRuneListModal" id="activeRune2">
+        <img src="path/to/activerune/empty.jpg" alt="主動符文圖片" class="img-fluid">
+    </div>
+    <div class="col-lg-2 col-4 activeRune-box" data-toggle="modal" data-target="#activeRuneListModal" id="activeRune3">
+        <img src="path/to/activerune/empty.jpg" alt="主動符文圖片" class="img-fluid">
+  </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- 主動符文清單的彈出視窗 -->
+<div class="modal fade" id="activeRuneListModal" tabindex="-1" role="dialog" aria-labelledby="activeRuneListModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="activeRuneListModalLabel">主動符文清單</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- 主動符文清單內容 -->
+        <div class="container">
+          <div class="row" id="activeRuneListContainer">
+            <!-- 主動符文清單中的每個格子，包括圖片等信息 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--主動符文配置JS-->
+<script>
+    var activerunePath = "path/to/activerune/";
+    var activeRunes = [
+        activerunePath + "empty.jpg", activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg", activerunePath + ".jpg",
+        activerunePath + "shamancatenhanced.jpg", activerunePath + "blackholeenhanced.jpg", activerunePath + "dreadnoughtwhaleenhanced.jpg", activerunePath + "piratex2.jpg",
+        activerunePath + "summoncatlaser.jpg", activerunePath + "catelectricshock.jpg", activerunePath + "clawpunchenhanced.jpg", activerunePath + "randomlegendaryskill.jpg",
+        activerunePath + "cloudenhanced.jpg", activerunePath + "randomepicskill.jpg", activerunePath + "fullmoonenhanced.jpg", activerunePath + "burgerpartyenhanced.jpg",
+        activerunePath + "catteorenhanced.jpg", activerunePath + "magiccrossbowenhanced.jpg", activerunePath + "catlaserenhanced.jpg", activerunePath + "howlenhanced.jpg",
+        activerunePath + "magicshield.jpg", activerunePath + "supercatenhancedII.jpg", activerunePath + "chakraenhanced.jpg", activerunePath + "scarecrowenhanced.jpg",
+        activerunePath + "fishrainenhanced.jpg", activerunePath + "supercatenhancedl.jpg", activerunePath + "randomrareskill.jpg", activerunePath + "tornadoenhanced.jpg",
+        activerunePath + "chickenrunenhanced.jpg", activerunePath + "supercatenhanced.jpg", activerunePath + "randomuncommonskill.jpg", activerunePath + "ratbombenhanced.jpg",
+        activerunePath + "clusterbombenhanced.jpg", activerunePath + "scraatchenhanced.jpg", activerunePath + "grrrrrenhanced.jpg", activerunePath + "dessertcomaenhanced.jpg",
+        activerunePath + "magiccircusenhanced.jpg", activerunePath + "dinnertimeenhanced.jpg", activerunePath + "icythornsenhanced.jpg", activerunePath + "leafslashenhanced.jpg",
+    ];
+    var activeRuneListContainer = document.getElementById('activeRuneListContainer');
+
+    for (var i = 0; i < activeRunes.length; i++) {
+        var activeRuneDiv = document.createElement('div');
+        activeRuneDiv.id = 'activeRuneList' + i;
+        activeRuneDiv.className = 'col-3 mb-3 activeRune-list-box';
+        activeRuneDiv.setAttribute('data-toggle', 'modal');
+        activeRuneDiv.setAttribute('data-target', '#activeRuneDetailModal');
+
+        var activeRuneImg = document.createElement('img');
+        activeRuneImg.src = activeRunes[i];
+        activeRuneImg.className = 'img-fluid';
+
+        activeRuneDiv.appendChild(activeRuneImg);
+        activeRuneListContainer.appendChild(activeRuneDiv);
+    }
+  $(document).ready(function() {
+    // 主動符文清單中的每個格子點擊事件
+    $('.activeRune-list-box').on('click', function() {
+      // 獲取被點擊的圖片的src
+      var selectedActiveRuneImage = $(this).find('img').attr('src');
+
+      // 獲取被點擊的主動符文格子的ID
+      var activeRuneBoxId = $('#activeRuneListModal').data('activeRuneBoxId');
+
+      // 將選定的圖片設置為相應主動符文格子的圖片
+      $('#' + activeRuneBoxId + ' img').attr('src', selectedActiveRuneImage);
+
+      // 關閉主動符文清單的彈出視窗
+      $('#activeRuneListModal').modal('hide');
+    });
+
+    // 主動符文格子點擊事件，設置主動符文清單彈出視窗相應的主動符文格子ID
+    $('.activeRune-box').on('click', function() {
+      var activeRuneBoxId = $(this).attr('id');
+      $('#activeRuneListModal').data('activeRuneBoxId', activeRuneBoxId);
+    });
+  });
+</script>
+
+<!--輔助符文配置-->
+<div class="container mt-4">
+  <h2>輔助符文配置</h2>
+  <div class="row"><!-- 輔助符文格子，lg以上顯示col-lg-2，其餘顯示col-4 -->
+      <div class="col-lg-2 col-3 subRune-box" data-toggle="modal" data-target="#subRuneListModal" id="subRune1">
+          <img src="path/to/subrune/subrune_empty.jpg" alt="輔助符文圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-3 subRune-box" data-toggle="modal" data-target="#subRuneListModal" id="subRune2">
+          <img src="path/to/subrune/subrune_empty.jpg" alt="輔助符文圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-3 subRune-box" data-toggle="modal" data-target="#subRuneListModal" id="subRune3">
+          <img src="path/to/subrune/subrune_empty.jpg" alt="輔助符文圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-3 subRune-box" data-toggle="modal" data-target="#subRuneListModal" id="subRune4">
+      <img src="path/to/subrune/subrune_empty.jpg" alt="輔助符文圖片" class="img-fluid">
+  </div>
+</div>
+
+<!-- 輔助符文清單的彈出視窗 -->
+<div class="modal fade" id="subRuneListModal" tabindex="-1" role="dialog" aria-labelledby="subRuneListModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="subRuneListModalLabel">輔助符文清單</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- 輔助符文清單內容 -->
+        <div class="container">
+          <div class="row" id="subRuneListContainer">
+            <!-- 輔助符文清單中的每個格子，包括圖片等信息 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--輔助符文配置JS-->
+<script>
+    var subrunePath = "path/to/subrune/subrune_";
+    var subRunes = [
+        subrunePath + "empty.jpg", 
+        
+        subrunePath + "", subrunePath + "", subrunePath + "", subrunePath + "",
+        subrunePath + "", subrunePath + "",
+        
+        subrunePath + "legendary_maxmpincreased.jpg", subrunePath + "legendary_catenhanced.jpg", subrunePath + "legendary_foodenhanced.jpg", subrunePath + "legendary_animalmpimproved.jpg", 
+        subrunePath + "legendary_piratecritboost.jpg", subrunePath + "legendary_piratecritenhanced.jpg", subrunePath + "legendary_pirateskillboost.jpg", subrunePath + "legendary_pirateboost.jpg", 
+        subrunePath + "legendary_catcritboost.jpg", subrunePath + "legendary_dessertenhanced.jpg", subrunePath + "legendary_catboost.jpg", subrunePath + "legendary_smallenhanced.jpg", 
+        subrunePath + "legendary_fishboost.jpg", subrunePath + "legendary_plantenhanced.jpg", subrunePath + "legendary_bossattack.jpg", subrunePath + "legendary_dragonenhanced.jpg", 
+        subrunePath + "legendary_magicenhanced.jpg", subrunePath + "legendary_catskillboost.jpg", subrunePath + "legendary_critdmg.jpg", subrunePath + "legendary_mediumenhanced.jpg", 
+        subrunePath + "legendary_chickenenhanced.jpg", subrunePath + "legendary_largeenhanced.jpg", subrunePath + "legendary_machinempimproved.jpg", subrunePath + "legendary_wolfenhanced.jpg", 
+        subrunePath + "legendary_wolfenhanced2.jpg", subrunePath + "legendary_wolfmpimproved.jpg", subrunePath + "legendary_sharkenhanced.jpg", subrunePath + "legendary_legendaryenhancement.jpg", 
+        subrunePath + "legendary_cloudenhanced.jpg", subrunePath + "legendary_zeromphamburger.jpg", subrunePath + "legendary_hamburgerenhanced.jpg", subrunePath + "legendary_machineenhanced.jpg", 
+        subrunePath + "legendary_animalenhanced.jpg", 
+
+        subrunePath + "epic_chickenenhanced.jpg", subrunePath + "epic_plantenhanced.jpg", subrunePath + "epic_cloudenhanced2.jpg", subrunePath + "epic_mediumenhanced.jpg", 
+        subrunePath + "epic_foodenhanced.jpg", subrunePath + "epic_largeenhanced.jpg", subrunePath + "epic_hamburgerenhanced.jpg", subrunePath + "epic_cloudenhanced.jpg", 
+        subrunePath + "epic_sharkenhanced.jpg", subrunePath + "epic_smallenhanced.jpg", subrunePath + "epic_wolfenhanced.jpg", subrunePath + "epic_dessertenhanced.jpg", 
+        subrunePath + "epic_magicenhanced.jpg", subrunePath + "epic_machinempimproved.jpg", subrunePath + "epic_catenhanced.jpg", subrunePath + "epic_critdmg.jpg", 
+        subrunePath + "epic_machineenhanced.jpg", subrunePath + "epic_animalmpimproved.jpg", subrunePath + "epic_tripleshot.jpg", subrunePath + "epic_plantmpimproved.jpg", 
+        subrunePath + "epic_fishboost.jpg", subrunePath + "epic_dragonenhanced.jpg", subrunePath + "epic_animalenhanced.jpg", subrunePath + "epic_atk.jpg", 
+        subrunePath + "epic_bossattack.jpg", 
+
+        subrunePath + "rare_foodenhanced.jpg", subrunePath + "rare_mediumenhanced.jpg", subrunePath + "rare_largeenhanced.jpg", subrunePath + "rare_magicenhanced.jpg", 
+        subrunePath + "rare_hamburgerenhanced.jpg", subrunePath + "rare_critchance.jpg", subrunePath + "rare_wolfenhanced.jpg", subrunePath + "rare_doubleshot.jpg", 
+        subrunePath + "rare_sharkenhanced.jpg", subrunePath + "rare_atk.jpg", subrunePath + "rare_dessertenhanced.jpg", subrunePath + "rare_cloudenhanced.jpg", 
+        subrunePath + "rare_smallenhanced.jpg", subrunePath + "rare_critdmg.jpg", subrunePath + "rare_dragonenhanced.jpg", subrunePath + "rare_plantmpenhanced.jpg", 
+        subrunePath + "rare_dessertenhanced.jpg", subrunePath + "rare_animalenhanced.jpg", subrunePath + "rare_catenhanced.jpg", subrunePath + "rare_chickenenhanced.jpg", 
+        subrunePath + "rare_bossattack.jpg", subrunePath + "rare_fishboost.jpg", subrunePath + "rare_tripleshot.jpg", subrunePath + "rare_plantenhanced.jpg", 
+        subrunePath + "uncommon_plantenhanced.jpg", subrunePath + "uncommon_foodenhanced.jpg", subrunePath + "uncommon_hamburgerenhanced.jpg", subrunePath + "uncommon_doubleshot.jpg", 
+        subrunePath + "uncommon_magicenhanced.jpg", subrunePath + "uncommon_largeenhanced.jpg", subrunePath + "uncommon_tripleshot.jpg", subrunePath + "uncommon_critdmg.jpg", 
+        subrunePath + "uncommon_machineenhanced.jpg", subrunePath + "uncommon_catenhanced.jpg", subrunePath + "uncommon_animalenhanced.jpg", subrunePath + "uncommon_chickenenhanced.jpg", 
+        subrunePath + "uncommon_bossattack.jpg", subrunePath + "uncommon_cloudenhanced.jpg", subrunePath + "uncommon_fishboost.jpg", subrunePath + "uncommon_dessertenhanced.jpg", 
+        subrunePath + "uncommon_mediumenhanced.jpg", subrunePath + "uncommon_atk.jpg", subrunePath + "uncommon_wolfenhanced.jpg", subrunePath + "uncommon_critchance.jpg", 
+        subrunePath + "uncommon_sharkenhanced.jpg", subrunePath + "uncommon_smallenhanced.jpg", subrunePath + "uncommon_dragonenhanced.jpg", 
+    ];
+    var subRuneListContainer = document.getElementById('subRuneListContainer');
+
+    for (var i = 0; i < subRunes.length; i++) {
+        var subRuneDiv = document.createElement('div');
+        subRuneDiv.id = 'subRuneList' + i;
+        subRuneDiv.className = 'col-3 mb-3 subRune-list-box';
+        subRuneDiv.setAttribute('data-toggle', 'modal');
+        subRuneDiv.setAttribute('data-target', '#subRuneDetailModal');
+
+        var subRuneImg = document.createElement('img');
+        subRuneImg.src = subRunes[i];
+        subRuneImg.className = 'img-fluid';
+
+        subRuneDiv.appendChild(subRuneImg);
+        subRuneListContainer.appendChild(subRuneDiv);
+    }
+  $(document).ready(function() {
+    // 輔助符文清單中的每個格子點擊事件
+    $('.subRune-list-box').on('click', function() {
+      // 獲取被點擊的圖片的src
+      var selectedsubRuneImage = $(this).find('img').attr('src');
+
+      // 獲取被點擊的輔助符文格子的ID
+      var subRuneBoxId = $('#subRuneListModal').data('subRuneBoxId');
+
+      // 將選定的圖片設置為相應輔助符文格子的圖片
+      $('#' + subRuneBoxId + ' img').attr('src', selectedsubRuneImage);
+
+      // 關閉輔助符文清單的彈出視窗
+      $('#subRuneListModal').modal('hide');
+    });
+
+    // 輔助符文格子點擊事件，設置輔助符文清單彈出視窗相應的輔助符文格子ID
+    $('.subRune-box').on('click', function() {
+      var subRuneBoxId = $(this).attr('id');
+      $('#subRuneListModal').data('subRuneBoxId', subRuneBoxId);
+    });
+  });
+</script>
 
 </body>
 </html>
