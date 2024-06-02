@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抽獎器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .button-container {
+            display: inline-block;
+            vertical-align: top;
+        }
+        .counter {
+            display: inline-block;
+            margin-left: 20px;
+            font-size: 18px;
+            vertical-align: top;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+        .item {
+            margin: 10px;
+            display: inline-block;
+        }
+        .item img {
+            width: 60px;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>夥伴抽獎器</h1>
+
+        <button onclick="draw(1)">一抽</button>
+        <button onclick="draw(10)">十抽</button>
+        <button onclick="draw(100)">一百抽</button>
+
+        <div class="counter">
+            已抽次數: <span id="drawCount">0</span> 次
+        </div>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        const img="img/companion/";
+        const prizes = [
+            { img: img + "companion_sausage.jpg", qty: 600 },{ img: img + "companion_sunny.jpg", qty: 600 },{ img: img + "companion_cracker.jpg", qty: 600 },
+            { img: img + "companion_pudding.jpg", qty: 600 },{ img: img + "companion_bread.jpg", qty: 600 },{ img: img + "companion_cake.jpg", qty: 600 },
+            
+            { img: img + "companion_tacoyaki.jpg", qty: 320 },{ img: img + "companion_tamago.jpg", qty: 320 },{ img: img + "companion_trunk.jpg", qty: 320 },
+            { img: img + "companion_burger.jpg", qty: 320 },{ img: img + "companion_carrot.jpg", qty: 320 },{ img: img + "companion_chick.jpg", qty: 320 },
+            { img: img + "companion_clover.jpg", qty: 320 },
+
+            { img: img + "companion_cookieknight.jpg", qty: 76 },{ img: img + "companion_devilcat.jpg", qty: 76 },{ img: img + "companion_drake.jpg", qty: 76 },
+            { img: img + "companion_firechick.jpg", qty: 76 },{ img: img + "companion_ghostcat.jpg", qty: 76 },{ img: img + "companion_jackdolf.jpg", qty: 76 },
+            { img: img + "companion_lightree.jpg", qty: 76 },{ img: img + "companion_bro.jpg", qty: 76 },{ img: img + "companion_bunny.jpg", qty: 76 },
+            { img: img + "companion_mouse.jpg", qty: 76 },{ img: img + "companion_phoenix.jpg", qty: 76 },{ img: img + "companion_pingu.jpg", qty: 76 },
+            { img: img + "companion_pumpky.jpg", qty: 76 },{ img: img + "companion_spark.jpg", qty: 76 },{ img: img + "companion_sparrow.jpg", qty: 76 },
+            { img: img + "companion_steelfin.jpg", qty: 76 },{ img: img + "companion_tulip.jpg", qty: 76 },{ img: img + "companion_whopper.jpg", qty: 76 },
+            { img: img + "companion_angrybomb.jpg", qty: 76 },
+
+            { img: img + "companion_grom.jpg", qty: 2.8 },{ img: img + "companion_jackdaw.jpg", qty: 2.8 },{ img: img + "companion_jackfly.jpg", qty: 2.8 },
+            { img: img + "companion_jackjaws.jpg", qty: 2.8 },{ img: img + "companion_jackstriker.jpg", qty: 2.8 },{ img: img + "companion_jacktiger.jpg", qty: 2.8 },
+            { img: img + "companion_lulu.jpg", qty: 2.8 },{ img: img + "companion_roro.jpg", qty: 2.8 },{ img: img + "companion_tanker.jpg", qty: 2.8 },
+            { img: img + "companion_warwolf.jpg", qty: 2.8 },{ img: img + "companion_werewolf.jpg", qty: 2.8 },{ img: img + "companion_catblack.jpg", qty: 2.8 },
+            { img: img + "companion_hotdogchef.jpg", qty: 2.8 },{ img: img + "companion_redplumchoppedice.jpg", qty: 2.8 },
+
+            { img: img + "companion_captainspecter.jpg", qty: 1.2 },{ img: img + "companion_oracle.jpg", qty: 1.2 },{ img: img + "companion_fenrir.jpg", qty: 1.2 }
+        ];
+
+        let drawCount = 0;
+
+        function updateDrawCount(count) {
+            drawCount += count;
+            document.getElementById('drawCount').innerText = drawCount;
+        }
+
+        function getRandomPrize() {
+            const totalQty = prizes.reduce((acc, prize) => acc + prize.qty, 0);
+            let random = Math.random() * totalQty;
+            for (const prize of prizes) {
+                if (random < prize.qty) {
+                    return prize;
+                }
+                random -= prize.qty;
+            }
+        }
+
+        function draw(times) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '';
+            for (let i = 0; i < times; i++) {
+                const prize = getRandomPrize();
+                const prizeDiv = document.createElement('div');
+                prizeDiv.classList.add('item');
+                prizeDiv.innerHTML = `<img src="${prize.img}">`;
+                resultDiv.appendChild(prizeDiv);
+            }
+            updateDrawCount(times);
+        }
+    </script>
+</body>
+</html>
