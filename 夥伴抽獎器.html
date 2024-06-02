@@ -31,14 +31,50 @@
         .result {
             margin-top: 20px;
         }
+        .item-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
         .item {
             margin: 10px;
             display: inline-block;
         }
-        .item img {
-            width: 60px;
-            height: 60px;
+        @media (min-width: 768px) {
+            .item img {
+                width: 100%;
+                height: 100%;
+                max-width: 100px; /* 控制最大寬度，避免過大 */
+                max-height: 100px; /* 控制最大高度，避免過大 */
+                object-fit: contain; /* 保持圖片比例並填滿容器 */
+            }
         }
+
+        /* 手機尺寸 */
+        @media (max-width: 767px) {
+            .item img {
+                width: 50px; /* 手機尺寸的寬度 */
+                height: 50px; /* 手機尺寸的高度 */
+                object-fit: contain; /* 保持圖片比例並填滿容器 */
+            }
+        }
+        .history {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .history-item {
+            flex: 0 0 auto;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .history-item img {
+            width: 50px;
+            height: 50px;
+        }
+        
     </style>
 </head>
 <body>
@@ -103,41 +139,50 @@
         }
 
         function draw(times) {
-    const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = '';
-    const drawnPrizes = {};
-    for (let i = 0; i < times; i++) {
-        const prize = getRandomPrize();
-        if (!drawnPrizes[prize.img]) {
-            drawnPrizes[prize.img] = { ...prize, count: 1 };
-        } else {
-            drawnPrizes[prize.img].count++;
-        }
-    }
-    for (const img in drawnPrizes) {
-        const prizeDiv = document.createElement('div');
-        prizeDiv.classList.add('item');
-        prizeDiv.innerHTML = `<img src="${img}"><br>x${drawnPrizes[img].count}`;
-        resultDiv.appendChild(prizeDiv);
-    }
-    updateDrawCount(times);
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '';
+            const drawnPrizes = {};
+            for (let i = 0; i < times; i++) {
+                const prize = getRandomPrize();
+                if (!drawnPrizes[prize.img]) {
+                    drawnPrizes[prize.img] = { ...prize, count: 1 };
+                } else {
+                    drawnPrizes[prize.img].count++;
+                }
+            }
+            for (const img in drawnPrizes) {
+                const prizeDiv = document.createElement('div');
+                prizeDiv.classList.add('item');
+                prizeDiv.innerHTML = `<img src="${img}"><br>x${drawnPrizes[img].count}`;
+                resultDiv.appendChild(prizeDiv);
+            }
+            updateDrawCount(times);
 
-    // 將抽獎結果添加到抽獎歷史
-    drawHistory.push({ count: times, draw: drawnPrizes });
-}
+            // 將抽獎結果添加到抽獎歷史
+            drawHistory.push({ count: times, draw: drawnPrizes });
+        }
 
         function showHistory() {
             const historyWindow = window.open("", "抽獎歷史", "width=400,height=600");
             historyWindow.document.write("<h1>抽獎歷史</h1>");
             drawHistory.forEach((entry, index) => {
                 historyWindow.document.write(`<h3>第${index + 1}次抽獎 - ${entry.count}抽</h3>`);
-                for (const img in entry.draw) {
-                    historyWindow.document.write(`<div class="item"><img src="${img}" width="30" height="30"> x${entry.draw[img].count}</div>`);
+                const prizes = Object.values(entry.draw);
+                let prizeHtml = '';
+                for (let i = 0; i < prizes.length; i++) {
+                    prizeHtml += `<img src="${prizes[i].img}" width="50" height="50"> x${prizes[i].count}`;
+                    if ((i + 1) % 4 === 0 || i === prizes.length - 1) {
+                        historyWindow.document.write(`<div class="item-row">${prizeHtml}</div>`);
+                        prizeHtml = '';
+                    } else {
+                        prizeHtml += '&nbsp;&nbsp;';
+                    }
                 }
                 historyWindow.document.write("<hr>");
             });
             historyWindow.document.close();
         }
+
     </script>
 </body>
 </html>
