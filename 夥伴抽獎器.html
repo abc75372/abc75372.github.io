@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>抽獎器</title>
+    <title>夥伴抽獎器</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -103,11 +103,19 @@
         function draw(times) {
             const resultDiv = document.getElementById('result');
             resultDiv.innerHTML = '';
+            const drawnPrizes = {};
             for (let i = 0; i < times; i++) {
                 const prize = getRandomPrize();
+                if (!drawnPrizes[prize.img]) {
+                    drawnPrizes[prize.img] = { ...prize, count: 1 };
+                } else {
+                    drawnPrizes[prize.img].count++;
+                }
+            }
+            for (const img in drawnPrizes) {
                 const prizeDiv = document.createElement('div');
                 prizeDiv.classList.add('item');
-                prizeDiv.innerHTML = `<img src="${prize.img}">`;
+                prizeDiv.innerHTML = `<img src="${img}"><br>x${drawnPrizes[img].count}`;
                 resultDiv.appendChild(prizeDiv);
             }
             updateDrawCount(times);
