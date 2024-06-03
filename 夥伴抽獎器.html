@@ -74,12 +74,21 @@
             width: 50px;
             height: 50px;
         }
-        
     </style>
 </head>
 <body>
     <div class="container">
-        <h3>夥伴抽獎器(機率比照遊戲中神話抽獎)</h3>
+        <h3>夥伴抽獎器(機率比照神話抽召喚機率)</h3>
+
+        <div>
+            <label for="probability">選擇召喚池:</label>
+            <select id="probability" onchange="updateProbabilities()">
+                <option value="default">一般機率</option>
+                <option value="increasefenrir">芬里爾</option>
+                <option value="increasecaptainspecter">海盜船長</option>
+                <option value="increaseoracle">奧拉</option>
+            </select>
+        </div>
 
         <button onclick="draw(1)">一抽</button>
         <button onclick="draw(10)">十抽</button>
@@ -93,30 +102,30 @@
     </div>
 
     <script>
-        const img="img/companion/";
+        const img = "img/companion/";
         const prizes = [
-            { img: img + "companion_sausage.jpg", qty: 600 },{ img: img + "companion_sunny.jpg", qty: 600 },{ img: img + "companion_cracker.jpg", qty: 600 },
-            { img: img + "companion_pudding.jpg", qty: 600 },{ img: img + "companion_bread.jpg", qty: 600 },{ img: img + "companion_cake.jpg", qty: 600 },
-            
-            { img: img + "companion_tacoyaki.jpg", qty: 320 },{ img: img + "companion_tamago.jpg", qty: 320 },{ img: img + "companion_trunk.jpg", qty: 320 },
-            { img: img + "companion_burger.jpg", qty: 320 },{ img: img + "companion_carrot.jpg", qty: 320 },{ img: img + "companion_chick.jpg", qty: 320 },
-            { img: img + "companion_clover.jpg", qty: 320 },
+            { img: img + "companion_sausage.jpg", qty: 100 },{ img: img + "companion_sunny.jpg", qty: 100 },{ img: img + "companion_cracker.jpg", qty: 100 },
+            { img: img + "companion_pudding.jpg", qty: 100 },{ img: img + "companion_bread.jpg", qty: 100 },{ img: img + "companion_cake.jpg", qty: 100 },
 
-            { img: img + "companion_cookieknight.jpg", qty: 76 },{ img: img + "companion_devilcat.jpg", qty: 76 },{ img: img + "companion_drake.jpg", qty: 76 },
-            { img: img + "companion_firechick.jpg", qty: 76 },{ img: img + "companion_ghostcat.jpg", qty: 76 },{ img: img + "companion_jackdolf.jpg", qty: 76 },
-            { img: img + "companion_lightree.jpg", qty: 76 },{ img: img + "companion_bro.jpg", qty: 76 },{ img: img + "companion_bunny.jpg", qty: 76 },
-            { img: img + "companion_mouse.jpg", qty: 76 },{ img: img + "companion_phoenix.jpg", qty: 76 },{ img: img + "companion_pingu.jpg", qty: 76 },
-            { img: img + "companion_pumpky.jpg", qty: 76 },{ img: img + "companion_spark.jpg", qty: 76 },{ img: img + "companion_sparrow.jpg", qty: 76 },
-            { img: img + "companion_steelfin.jpg", qty: 76 },{ img: img + "companion_tulip.jpg", qty: 76 },{ img: img + "companion_whopper.jpg", qty: 76 },
-            { img: img + "companion_angrybomb.jpg", qty: 76 },
+            { img: img + "companion_tacoyaki.jpg", qty: 45.714 },{ img: img + "companion_tamago.jpg", qty: 45.714 },{ img: img + "companion_trunk.jpg", qty: 45.714 }, 
+            { img: img + "companion_burger.jpg", qty: 45.714 },{ img: img + "companion_carrot.jpg", qty: 45.714 },{ img: img + "companion_chick.jpg", qty: 45.714 },
+            { img: img + "companion_clover.jpg", qty: 45.714 },
 
-            { img: img + "companion_grom.jpg", qty: 2.8 },{ img: img + "companion_jackdaw.jpg", qty: 2.8 },{ img: img + "companion_jackfly.jpg", qty: 2.8 },
-            { img: img + "companion_jackjaws.jpg", qty: 2.8 },{ img: img + "companion_jackstriker.jpg", qty: 2.8 },{ img: img + "companion_jacktiger.jpg", qty: 2.8 },
-            { img: img + "companion_lulu.jpg", qty: 2.8 },{ img: img + "companion_roro.jpg", qty: 2.8 },{ img: img + "companion_tanker.jpg", qty: 2.8 },
-            { img: img + "companion_warwolf.jpg", qty: 2.8 },{ img: img + "companion_werewolf.jpg", qty: 2.8 },{ img: img + "companion_catblack.jpg", qty: 2.8 },
-            { img: img + "companion_hotdogchef.jpg", qty: 2.8 },{ img: img + "companion_redplumchoppedice.jpg", qty: 2.8 },
+            { img: img + "companion_cookieknight.jpg", qty: 4 },{ img: img + "companion_devilcat.jpg", qty: 4 },{ img: img + "companion_drake.jpg", qty: 4 },
+            { img: img + "companion_firechick.jpg", qty: 4 },{ img: img + "companion_ghostcat.jpg", qty: 4 },{ img: img + "companion_jackdolf.jpg", qty: 4 },
+            { img: img + "companion_lightree.jpg", qty: 4 },{ img: img + "companion_bro.jpg", qty: 4 },{ img: img + "companion_bunny.jpg", qty: 4 },
+            { img: img + "companion_mouse.jpg", qty: 4 },{ img: img + "companion_phoenix.jpg", qty: 4 },{ img: img + "companion_pingu.jpg", qty: 4 },
+            { img: img + "companion_pumpky.jpg", qty: 4 },{ img: img + "companion_spark.jpg", qty: 4 },{ img: img + "companion_sparrow.jpg", qty: 4 },
+            { img: img + "companion_steelfin.jpg", qty: 4 },{ img: img + "companion_tulip.jpg", qty: 4 },{ img: img + "companion_whopper.jpg", qty: 4 },
+            { img: img + "companion_angrybomb.jpg", qty: 4 },
 
-            { img: img + "companion_captainspecter.jpg", qty: 1.2 },{ img: img + "companion_oracle.jpg", qty: 1.2 },{ img: img + "companion_fenrir.jpg", qty: 1.2 }
+            { img: img + "companion_grom.jpg", qty: 0.2 },{ img: img + "companion_jackdaw.jpg", qty: 0.2 },{ img: img + "companion_jackfly.jpg", qty: 0.2 },
+            { img: img + "companion_jackjaws.jpg", qty: 0.2 },{ img: img + "companion_jackstriker.jpg", qty: 0.2 },{ img: img + "companion_jacktiger.jpg", qty: 0.2 },
+            { img: img + "companion_lulu.jpg", qty: 0.2 },{ img: img + "companion_roro.jpg", qty: 0.2 },{ img: img + "companion_tanker.jpg", qty: 0.2 },
+            { img: img + "companion_warwolf.jpg", qty: 0.2 },{ img: img + "companion_werewolf.jpg", qty: 0.2 },{ img: img + "companion_catblack.jpg", qty: 0.2 },
+            { img: img + "companion_hotdogchef.jpg", qty: 0.2 },{ img: img + "companion_redplumchoppedice.jpg", qty: 0.2 },
+
+            { img: img + "companion_captainspecter.jpg", qty: 0.4 },{ img: img + "companion_oracle.jpg", qty: 0.4 },{ img: img + "companion_fenrir.jpg", qty: 0.4 }
         ];
 
         let drawCount = 0;
@@ -152,12 +161,11 @@
             }
             for (const img in drawnPrizes) {
                 const prizeDiv = document.createElement('div');
-                prizeDiv.classList.add('item');
-                prizeDiv.innerHTML = `<img src="${img}"><br>x${drawnPrizes[img].count}`;
+                prizeDiv.className = 'item';
+                prizeDiv.innerHTML = `<img src="${img}" alt="prize"><br>x${drawnPrizes[img].count}`;
                 resultDiv.appendChild(prizeDiv);
             }
             updateDrawCount(times);
-
             // 將抽獎結果添加到抽獎歷史
             drawHistory.push({ count: times, draw: drawnPrizes });
         }
@@ -181,6 +189,61 @@
                 historyWindow.document.write("<hr>");
             });
             historyWindow.document.close();
+        }
+
+        function updateProbabilities() {
+            const probabilitySetting = document.getElementById('probability').value;
+            switch (probabilitySetting) {
+                case 'increasefenrir':
+                    prizes.forEach((prize, index) => {
+                        const fenrirQty = [
+                            100, 100, 100, 100, 100, 100, 
+                            45.714, 45.714, 45.714, 45.714, 45.714, 45.714, 45.714, 
+                            4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 
+                            0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 
+                            0.12, 0.12, 0.96
+                        ][index];
+                        prize.qty = fenrirQty;
+                    });
+                    break;
+                case 'increasecaptainspecter':
+                    prizes.forEach((prize, index) => {
+                        const captainspecterQty = [
+                            100, 100, 100, 100, 100, 100, 
+                            45.714, 45.714, 45.714, 45.714, 45.714, 45.714, 45.714, 
+                            4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 
+                            0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 
+                            0.96, 0.12, 0.12
+                        ][index];
+                        prize.qty = captainspecterQty;
+                    });
+                    break;
+                case 'increaseoracle':
+                    prizes.forEach((prize, index) => {
+                        const oracleQty = [
+                            100, 100, 100, 100, 100, 100, 
+                            45.714, 45.714, 45.714, 45.714, 45.714, 45.714, 45.714, 
+                            4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 
+                            0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 
+                            0.12, 0.96, 0.12
+                        ][index];
+                        prize.qty = oracleQty;
+                    });
+                    break;
+                default:
+                    // Reset to default probabilities
+                    prizes.forEach((prize, index) => {
+                        const defaultQty = [
+                            100, 100, 100, 100, 100, 100, 
+                            45.714, 45.714, 45.714, 45.714, 45.714, 45.714, 45.714, 
+                            4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 
+                            0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 
+                            0.4, 0.4, 0.4
+                        ][index];
+                        prize.qty = defaultQty;
+                    });
+                    break;
+            }
         }
 
     </script>
