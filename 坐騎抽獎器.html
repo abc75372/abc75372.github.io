@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>坐騎抽獎器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .slider-container {
+            display: inline-block;
+            vertical-align: top;
+            margin: 20px;
+        }
+        .counter {
+            display: inline-block;
+            margin-left: 20px;
+            font-size: 18px;
+            vertical-align: top;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+        .item-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .item {
+            margin: 10px;
+            display: inline-block;
+        }
+        @media (min-width: 768px) {
+            .item img {
+                width: 100%;
+                height: 100%;
+                max-width: 100px; /* 控制最大寬度，避免過大 */
+                max-height: 100px; /* 控制最大高度，避免過大 */
+                object-fit: contain; /* 保持圖片比例並填滿容器 */
+            }
+        }
+
+        /* 手機尺寸 */
+        @media (max-width: 767px) {
+            .item img {
+                width: 40px; /* 手機尺寸的寬度 */
+                height: 40px; /* 手機尺寸的高度 */
+                object-fit: contain; /* 保持圖片比例並填滿容器 */
+            }
+        }
+        .history {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .history-item {
+            flex: 0 0 auto;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .history-item img {
+            width: 50px;
+            height: 50px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>坐騎抽獎器(機率比照坐騎召喚機率)</h3>
+
+        <button onclick="draw(1)">一抽</button>
+        <button onclick="draw(10)">十抽</button>
+        <button onclick="showHistory()">顯示抽獎歷史</button>
+
+        <div class="counter">
+            已抽次數: <span id="drawCount">0</span> 次
+        </div>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        const img="img/mount/";
+        const prizes = [
+            { img: img + "greyturtle.jpg", qty: 800000 / 4 }, { img: img + "greyfish.jpg", qty: 800000 / 4 }, { img: img + "greywhale.jpg", qty: 800000 / 4 }, { img: img + "greycloud.jpg", qty: 800000 / 4 }, 
+
+            { img: img + "greenturtle.jpg", qty: 190000 / 4 }, { img: img + "greenfish.jpg", qty: 190000 / 4 }, { img: img + "greenwhale.jpg", qty: 190000 / 4 }, { img: img + "greencloud.jpg", qty: 190000 / 4 }, 
+
+            { img: img + "bluetrutle.jpg", qty: 9000 / 7 }, { img: img + "bluefish.jpg", qty: 9000 / 7 }, { img: img + "bluewhale.jpg", qty: 9000 / 7 }, { img: img + "bluecloud.jpg", qty: 9000 / 7 }, 
+            { img: img + "bluesnails.jpg", qty: 9000 / 7 }, { img: img + "bluemushroom.jpg", qty: 9000 / 7 }, { img: img + "bluetree.jpg", qty: 9000 / 7 }, 
+
+            { img: img + "purpleturtle.jpg", qty: 900 / 4 }, { img: img + "purplewhale.jpg", qty: 900 / 4 }, { img: img + "purplecloud.jpg", qty: 900 / 4 }, { img: img + "purplefish.jpg", qty: 900 / 4 }, 
+
+            { img: img + "redwhale.jpg", qty: 100 / 3 }, { img: img + "redturtle.jpg", qty: 100 / 3 }, { img: img + "redcloud.jpg", qty: 100 / 3 }, 
+        ];
+
+        let drawCount = 0;
+        let drawHistory = [];
+
+        function updateDrawCount(count) {
+            drawCount += count;
+            document.getElementById('drawCount').innerText = drawCount;
+        }
+
+        function getRandomPrize() {
+            const totalQty = prizes.reduce((acc, prize) => acc + prize.qty, 0);
+            let random = Math.random() * totalQty;
+            for (const prize of prizes) {
+                if (random < prize.qty) {
+                    return prize;
+                }
+                random -= prize.qty;
+            }
+        }
+
+        function draw(times) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '';
+            const drawnPrizes = {};
+            for (let i = 0; i < times; i++) {
+                const prize = getRandomPrize();
+                if (!drawnPrizes[prize.img]) {
+                    drawnPrizes[prize.img] = { ...prize, count: 1 };
+                } else {
+                    drawnPrizes[prize.img].count++;
+                }
+            }
+            for (const img in drawnPrizes) {
+                const prizeDiv = document.createElement('div');
+                prizeDiv.className = 'item';
+                prizeDiv.innerHTML = `<img src="${img}" alt="prize"><br>x${drawnPrizes[img].count}`;
+                resultDiv.appendChild(prizeDiv);
+            }
+            updateDrawCount(times);
+            // 將抽獎結果添加到抽獎歷史
+            drawHistory.push({ count: times, draw: drawnPrizes });
+        }
+
+        function showHistory() {
+            const historyWindow = window.open("", "抽獎歷史", "width=400,height=600");
+            historyWindow.document.write("<h1>抽獎歷史</h1>");
+            drawHistory.forEach((entry, index) => {
+                historyWindow.document.write(`<h3>第${index + 1}次抽獎 - ${entry.count}抽</h3>`);
+                const prizes = Object.values(entry.draw);
+                let prizeHtml = '';
+                for (let i = 0; i < prizes.length; i++) {
+                    prizeHtml += `<img src="${prizes[i].img}" width="50" height="50"> x${prizes[i].count}`;
+                    if ((i + 1) % 4 === 0 || i === prizes.length - 1) {
+                        historyWindow.document.write(`<div class="item-row">${prizeHtml}</div>`);
+                        prizeHtml = '';
+                    } else {
+                        prizeHtml += '&nbsp;&nbsp;';
+                    }
+                }
+                historyWindow.document.write("<hr>");
+            });
+            historyWindow.document.close();
+        }
+
+    </script>
+</body>
+</html>
