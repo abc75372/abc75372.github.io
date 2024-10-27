@@ -103,6 +103,7 @@
           
           skillPath + "spicycurse.jpg", skillPath + "bombshellrain.jpg", skillPath + "wildnature.jpg", skillPath + "shamancat.jpg", skillPath + "catheroes.jpg", 
           skillPath + "oceanspunishment.jpg", skillPath + "drawsword.jpg", skillPath + "thehuntbegins.jpg", skillPath + "summonphoenix.jpg", 
+          skillPath + "lasersummon.jpg", 
       ];
   
       var skillListContainer = document.getElementById('skillListContainer');
@@ -205,9 +206,12 @@
           companionPath + "drake.jpg", companionPath + "spark.jpg", companionPath + "cookieknight.jpg", companionPath + "pumpky.jpg", 
           companionPath + "steelfin.jpg", companionPath + "angrybomb.jpg", companionPath + "devilcat.jpg", companionPath + "bro.jpg", 
           companionPath + "sparrow.jpg", 
+        
           companionPath + "hotdogchef.jpg", companionPath + "redplumchoppedice.jpg",companionPath + "earlofsandwich.jpg", companionPath + "coolspicypizza.jpg", 
           companionPath + "catblack.jpg", companionPath + "jackstriker.jpg", companionPath + "werewolf.jpg", companionPath + "grom.jpg", companionPath + "lulu.jpg", 
           companionPath + "roro.jpg", companionPath + "jacktiger.jpg", companionPath + "jackjaws.jpg", companionPath + "jackfly.jpg", 
+          companionPath + "claude.jpg", 
+        
           companionPath + "warwolf.jpg", companionPath + "jackdaw.jpg", companionPath + "tanker.jpg", 
           companionPath + "spicynoodlezombie.jpg", companionPath + "catwarrior.jpg", companionPath + "wolfwarrior.jpg", companionPath + "securityofficerturkey.jpg",  
           companionPath + "captainspecter.jpg", companionPath + "fenrir.jpg", companionPath + "oracle.jpg",
@@ -304,7 +308,7 @@
         activerunePath + "cloudenhanced.jpg", activerunePath + "bombshellrainenhanced.jpg", activerunePath + "candleenhanced.jpg", activerunePath + "hotdogattack.jpg",
         activerunePath + "catlegionenhanced_legend.jpg", activerunePath + "ingredientcritenhanced.jpg", activerunePath + "piratelogoenhanced.jpg", activerunePath + "spicycurseenhanced.jpg", 
         activerunePath + "drawswordenhanced_legend.jpg", activerunePath + "nocturneenhanced.jpg", activerunePath + "sharklogoenhanced_legend.jpg", activerunePath + "summonphoenixenhanced_legend.jpg", 
-        activerunePath + "thehuntbeginenhanced.jpg", 
+        activerunePath + "thehuntbeginenhanced.jpg", activerunePath + "lasersummonenhance_legend.jpg",
       
         activerunePath + "randomepicskill.jpg", activerunePath + "fullmoonenhanced.jpg", activerunePath + "burgerpartyenhanced.jpg", activerunePath + "epic_blackcloudenhanced.jpg", 
         activerunePath + "catteorenhanced.jpg", activerunePath + "magiccrossbowenhanced.jpg", activerunePath + "catlaserenhanced.jpg", activerunePath + "howlenhanced.jpg",
@@ -410,7 +414,7 @@
     var subRunes = [
         subrunePath + "empty.jpg", 
 
-        subrunePath + "myth_criticalresistance.jpg", subrunePath + "myth_hit.jpg", subrunePath + "myth_pirateenhanced3.jpg", subrunePath + "myth_pirateenhanced2.jpg", 
+        subrunePath + "myth_criticalhitresistance.jpg", subrunePath + "myth_hit.jpg", subrunePath + "myth_pirateenhanced3.jpg", subrunePath + "myth_pirateenhanced2.jpg", 
         subrunePath + "myth_pirateenhanced.jpg", subrunePath + "myth_catenhanced2.jpg", subrunePath + "myth_catenhanced.jpg", subrunePath + "myth_foodenhanced3.jpg", 
         subrunePath + "myth_foodenhanced2.jpg", subrunePath + "myth_machineenhanced2.jpg", subrunePath + "myth_machineenhanced.jpg", subrunePath + "myth_wolfenhanced3.jpg", 
         subrunePath + "myth_wolfenhanced2.jpg", subrunePath + "myth_mpenhanced.jpg", subrunePath + "myth_dodge.jpg", subrunePath + "myth_foodenhanced.jpg", 
@@ -426,7 +430,7 @@
         subrunePath + "legendary_cloudenhanced.jpg", subrunePath + "legendary_zeromphamburger.jpg", subrunePath + "legendary_hamburgerenhanced.jpg", subrunePath + "legendary_machineenhanced.jpg", 
         subrunePath + "legendary_animalenhanced.jpg", subrunePath + "legend_cloudmpenhanced.jpg", subrunePath + "legend_foodmpenhanced.jpg", subrunePath + "legend_mpenhanced.jpg", 
         subrunePath + "legend_foodenhanced.jpg", subrunePath + "legend_spicyenhanced.jpg", subrunePath + "legend_crit.jpg", subrunePath + "legend_criticalresistance.jpg", 
-        subrunePath + "legend_dodge.jpg", subrunePath + "legend_hit.jpg", 
+        subrunePath + "legend_dodge.jpg", subrunePath + "legend_hit.jpg", subrunePath + "legend_criticalhitresistance.jpg", 
 
         subrunePath + "epic_chickenenhanced.jpg", subrunePath + "epic_plantenhanced.jpg", subrunePath + "epic_cloudenhanced2.jpg", subrunePath + "epic_mediumenhanced.jpg", 
         subrunePath + "epic_foodenhanced.jpg", subrunePath + "epic_largeenhanced.jpg", subrunePath + "epic_hamburgerenhanced.jpg", subrunePath + "epic_cloudenhanced.jpg", 
@@ -435,7 +439,7 @@
         subrunePath + "epic_machineenhanced.jpg", subrunePath + "epic_animalmpimproved.jpg", subrunePath + "epic_tripleshot.jpg", subrunePath + "epic_plantmpimproved.jpg", 
         subrunePath + "epic_fishboost.jpg", subrunePath + "epic_dragonenhanced.jpg", subrunePath + "epic_animalenhanced.jpg", subrunePath + "epic_atk.jpg", 
         subrunePath + "epic_bossattack.jpg", subrunePath + "epic_crit.jpg", subrunePath + "epic_spicyenhanced.jpg", subrunePath + "epic_hit.jpg", 
-        subrunePath + "epic_dodge.jpg", subrunePath + "epic_criticalresistance.jpg", 
+        subrunePath + "epic_dodge.jpg", subrunePath + "epic_criticalresistance.jpg", subrunePath + "epic_criticalhitresistance.jpg",
 
         subrunePath + "rare_foodenhanced.jpg", subrunePath + "rare_mediumenhanced.jpg", subrunePath + "rare_largeenhanced.jpg", subrunePath + "rare_magicenhanced.jpg", 
         subrunePath + "rare_hamburgerenhanced.jpg", subrunePath + "rare_critchance.jpg", subrunePath + "rare_wolfenhanced.jpg", subrunePath + "rare_doubleshot.jpg", 
@@ -443,7 +447,8 @@
         subrunePath + "rare_smallenhanced.jpg", subrunePath + "rare_critdmg.jpg", subrunePath + "rare_dragonenhanced.jpg", subrunePath + "rare_plantmpenhanced.jpg", 
         subrunePath + "rare_dessertenhanced.jpg", subrunePath + "rare_animalenhanced.jpg", subrunePath + "rare_catenhanced.jpg", subrunePath + "rare_chickenenhanced.jpg", 
         subrunePath + "rare_bossattack.jpg", subrunePath + "rare_fishboost.jpg", subrunePath + "rare_tripleshot.jpg", subrunePath + "rare_plantenhanced.jpg", 
-        subrunePath + "rare_criticalresistance.jpg", subrunePath + "rare_spicyenhanced.jpg", subrunePath + "rare_hit.jpg", subrunePath + "rare_dodge.jpg", 
+        subrunePath + "rare_criticalresistance.jpg", subrunePath + "rare_spicyenhanced.jpg", subrunePath + "rare_hit.jpg", subrunePath + "rare_dodge.jpg",
+        subrunePath + "rare_criticalhitresistance.jpg",
 
         subrunePath + "uncommon_plantenhanced.jpg", subrunePath + "uncommon_foodenhanced.jpg", subrunePath + "uncommon_hamburgerenhanced.jpg", subrunePath + "uncommon_doubleshot.jpg", 
         subrunePath + "uncommon_magicenhanced.jpg", subrunePath + "uncommon_largeenhanced.jpg", subrunePath + "uncommon_tripleshot.jpg", subrunePath + "uncommon_critdmg.jpg", 
@@ -451,6 +456,7 @@
         subrunePath + "uncommon_bossattack.jpg", subrunePath + "uncommon_cloudenhanced.jpg", subrunePath + "uncommon_fishboost.jpg", subrunePath + "uncommon_dessertenhanced.jpg", 
         subrunePath + "uncommon_mediumenhanced.jpg", subrunePath + "uncommon_atk.jpg", subrunePath + "uncommon_wolfenhanced.jpg", subrunePath + "uncommon_critchance.jpg", 
         subrunePath + "uncommon_sharkenhanced.jpg", subrunePath + "uncommon_smallenhanced.jpg", subrunePath + "uncommon_dragonenhanced.jpg", subrunePath + "uncommon_spicyenhanced.jpg", 
+        subrunePath + "uncommon_criticalresistance.jpg",
     ];
     var subRuneListContainer = document.getElementById('subRuneListContainer');
 
