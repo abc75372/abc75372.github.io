@@ -68,7 +68,8 @@
         <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="exampleModalLabel">Game Timer: <span id="timer">30</span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="container">
@@ -177,6 +178,8 @@
             const handleClick = () => {
                 if (foregroundImg.src.includes(uniqueImage)) {
                     alert('Complete!');
+                    setTimeout(loadImages, 100);
+                    startTimer();
                 } else {
                     alert('Miss!');
                 }
@@ -192,6 +195,46 @@
 
         // 當 modal 顯示時載入圖片
         $('#exampleModal').on('show.bs.modal', loadImages);
+
+        let countdown;
+        let timeLeft = 30;
+
+        // 啟動計時器
+        function startTimer() {
+            timeLeft = 30;
+            document.getElementById('timer').textContent = timeLeft;
+            
+            // 清除之前的計時器
+            clearInterval(countdown);
+            
+            countdown = setInterval(() => {
+                timeLeft--;
+                document.getElementById('timer').textContent = timeLeft;
+
+                if (timeLeft <= 0) {
+                    clearInterval(countdown);
+                    alert('Time is up!');
+                    loadImages();  // 時間到時重新載入圖片
+                    startTimer();  // 重新啟動計時器
+                }
+            }, 1000);
+        }
+
+        // 停止計時器
+        function stopTimer() {
+            clearInterval(countdown);
+        }
+
+        // 當 modal 顯示時啟動計時器
+        $('#exampleModal').on('show.bs.modal', () => {
+            startTimer();
+            loadImages(); // 每次顯示 modal 時重新載入圖片
+        });
+
+        // 當 modal 關閉時停止計時器
+        $('#exampleModal').on('hide.bs.modal', () => {
+            stopTimer();
+        });
 
     </script>
     
