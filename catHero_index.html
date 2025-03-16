@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>黑金喵農場</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="catHero_style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="catHero_data.js"></script>
+    <script src="catHero_main.js"></script>
+  </head>
+<body>
+
+<!--頂端清單-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand fs-1" href="catHero_index.html" id="top">&nbsp&nbsp黑金喵農場</a>
+  <div class="container mt-4">
+    <h2>快速配置切換</h2>
+    <div class="mb-3">
+      <select id="globalPreset" class="form-select w-100">
+        <option value="">推薦隊伍</option>
+        <option value="cloudcat">貓雲</option>
+        <option value="machinecat">貓機械</option>
+        <option value="shadowcat">貓影子</option>
+        <option value="piratewhale">海盜船長+鯨魚</option>
+        <option value="sharkwhale">海盜鯊魚+鯨魚</option>
+        <option value="wolf">狼</option>
+        <option value="food">食物</option>
+      </select>
+    </div>
+  </div>
+</nav>
+
+<!--技能配置-->
+<div class="container mt-4">
+    <h2>技能</h2>
+    <div class="row">
+      <!-- 技能格子，lg以上顯示col-lg-2，其餘顯示col-4 -->
+      <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill1">
+          <img src="img/skill/empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill2">
+          <img src="img/skill/empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill3">
+          <img src="img/skill/empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill4">
+          <img src="img/skill/empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill5">
+          <img src="img/skill/empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 skill-box" data-toggle="modal" data-target="#skillListModal" id="skill6">
+          <img src="img/skill/empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+    </div>
+</div>
+  
+<!-- 技能清單的彈出視窗 -->
+<div class="modal fade" id="skillListModal" tabindex="-1" role="dialog" aria-labelledby="skillListModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="skillListModalLabel">技能清單</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- 技能清單內容 -->
+          <div class="container">
+            <div class="row" id="skillListContainer">
+              <!-- 技能清單中的每個格子，包括圖片等信息 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!--夥伴配置-->
+<div class="container mt-4">
+    <h2>夥伴</h2>
+    <div class="row"><!-- 夥伴格子，lg以上顯示col-lg-2，其餘顯示col-4 -->
+      <div class="col-lg-2 col-4 companion-box" data-toggle="modal" data-target="#companionListModal" id="companion1">
+          <img src="img/companion/empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 companion-box" data-toggle="modal" data-target="#companionListModal" id="companion2">
+          <img src="img/companion/empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 companion-box" data-toggle="modal" data-target="#companionListModal" id="companion3">
+          <img src="img/companion/empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 companion-box" data-toggle="modal" data-target="#companionListModal" id="companion4">
+          <img src="img/companion/empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 companion-box" data-toggle="modal" data-target="#companionListModal" id="companion5">
+          <img src="img/companion/empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-4 companion-box" data-toggle="modal" data-target="#companionListModal" id="companion6">
+          <img src="img/companion/empty.jpg" alt="夥伴圖片" class="img-fluid">
+      </div>
+    </div>
+</div>
+  
+<!-- 夥伴清單的彈出視窗 -->
+<div class="modal fade" id="companionListModal" tabindex="-1" role="dialog" aria-labelledby="companionListModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="companionListModalLabel">夥伴清單</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- 夥伴清單內容 -->
+          <div class="container">
+            <div class="row" id="companionListContainer">
+              <!-- 夥伴清單中的每個格子，包括圖片等信息 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!--主動符文配置-->
+<div class="container mt-4">
+  <h2>主動符文</h2>
+  <div class="row"><!-- 主動符文格子，lg以上顯示col-lg-2，其餘顯示col-4 -->
+    <div class="col-lg-2 col-4 activeRune-box" data-toggle="modal" data-target="#activeRuneListModal" id="activeRune1">
+        <img src="img/activerune/empty.jpg" alt="主動符文圖片" class="img-fluid">
+    </div>
+    <div class="col-lg-2 col-4 activeRune-box" data-toggle="modal" data-target="#activeRuneListModal" id="activeRune2">
+        <img src="img/activerune/empty.jpg" alt="主動符文圖片" class="img-fluid">
+    </div>
+    <div class="col-lg-2 col-4 activeRune-box" data-toggle="modal" data-target="#activeRuneListModal" id="activeRune3">
+        <img src="img/activerune/empty.jpg" alt="主動符文圖片" class="img-fluid">
+    </div>
+    <div class="col-lg-2 col-4 activeRune-box" data-toggle="modal" data-target="#activeRuneListModal" id="activeRune4">
+      <img src="img/activerune/empty.jpg" alt="主動符文圖片" class="img-fluid">
+    </div>
+</div>
+
+<!-- 主動符文清單的彈出視窗 -->
+<div class="modal fade" id="activeRuneListModal" tabindex="-1" role="dialog" aria-labelledby="activeRuneListModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="activeRuneListModalLabel">主動符文清單</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- 主動符文清單內容 -->
+        <div class="container">
+          <div class="row" id="activeRuneListContainer">
+            <!-- 主動符文清單中的每個格子，包括圖片等信息 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--輔助符文配置-->
+<div class="container mt-4">
+  <h2>輔助符文</h2>
+  <div class="row"><!-- 輔助符文格子，lg以上顯示col-lg-2，其餘顯示col-4 -->
+      <div class="col-lg-2 col-3 subRune-box" data-toggle="modal" data-target="#subRuneListModal" id="subRune1">
+          <img src="img/subrune/empty.jpg" alt="輔助符文圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-3 subRune-box" data-toggle="modal" data-target="#subRuneListModal" id="subRune2">
+          <img src="img/subrune/empty.jpg" alt="輔助符文圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-3 subRune-box" data-toggle="modal" data-target="#subRuneListModal" id="subRune3">
+          <img src="img/subrune/empty.jpg" alt="輔助符文圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-3 subRune-box" data-toggle="modal" data-target="#subRuneListModal" id="subRune4">
+          <img src="img/subrune/empty.jpg" alt="輔助符文圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-3 subRune-box" data-toggle="modal" data-target="#subRuneListModal" id="subRune5">
+          <img src="img/subrune/empty.jpg" alt="輔助符文圖片" class="img-fluid">
+      </div>
+      <div class="col-lg-2 col-3 subRune-box" data-toggle="modal" data-target="#subRuneListModal" id="subRune6">
+          <img src="img/subrune/empty.jpg" alt="輔助符文圖片" class="img-fluid">
+      </div>
+</div>
+
+<!-- 輔助符文清單的彈出視窗 -->
+<div class="modal fade" id="subRuneListModal" tabindex="-1" role="dialog" aria-labelledby="subRuneListModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="subRuneListModalLabel">輔助符文清單</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- 輔助符文清單內容 -->
+        <div class="container">
+          <div class="row" id="subRuneListContainer">
+            <!-- 輔助符文清單中的每個格子，包括圖片等信息 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
